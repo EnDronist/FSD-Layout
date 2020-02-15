@@ -1,0 +1,110 @@
+/* Colors & Type */
+body {
+    width: 1440px;
+    height: 900px;
+    background: #FFFFFF;
+}
+
+/* Site icon */
+.site-icon {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 30px;
+    top: 30px;
+    path {
+        /* Dark 25% */
+        background: rgba(31, 32, 65, 0.25);
+    }
+}
+
+/* Section - Colors */
+section.colors {
+    position: absolute;
+    width: 270px;
+    height: 610px;
+    left: 150px;
+    top: 150px;
+    .color {
+        display: flex;
+        width: inherit;
+        height: 70px;
+        margin-bottom: 20px;
+        flex-direction: row;
+        align-items: center;
+        &:last-child {
+            margin-bottom: unset;
+        }
+        .color-visual {
+            display: inline-block;
+            width: 70px;
+            min-width: 70px;
+            height: 70px;
+            left: 150px;
+            background-color: initial; /* Configured */
+            border-radius: 6px;
+        }
+        .color-desc {
+            position: inherit;
+            float: right;
+            height: 56px;
+            margin-left: 40px;
+            font-family: Quicksand;
+            font-style: normal;
+            font-size: 19px;
+            line-height: 28px;
+            /* Dark 100% */
+            color: #1F2041;
+        }
+    }
+}
+
+/* Section - Headers */
+section.headers {
+    position: absolute;
+    width: 400px;
+    left: 850px;
+    top: 150px;
+    .header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 50px;
+        &:last-child {
+            margin-bottom: unset;
+        }
+    }
+    .header-tag {
+        display: block;
+        min-width: 40px;
+        font-family: Montserrat;
+        text-align: right;
+        font-weight: normal;
+        /* Dark 25% */
+        color: rgba(31, 32, 65, 0.25);
+    }
+    .header-desc {
+        font-family: Quicksand;
+        text-align: left;
+        margin-left: 30px;
+    }
+    h1 {
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 19px;
+        line-height: 23px;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+    }
+    span {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}

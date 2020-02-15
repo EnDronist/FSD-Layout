@@ -1,0 +1,25 @@
+{
+  "name": "fsd2",
+  "version": "1.0.0",
+  "description": "FSD-Layout",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config prod.config.js",
+    "sass": "sass --watch .:. --no-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnDronist/FSD-Layout.git"
+  },
+  "author": "EnDronist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnDronist/FSD-Layout/issues"
+  },
+  "homepage": "https://github.com/EnDronist/FSD-Layout#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "sass": "^1.25.0"
+  }
+}
