@@ -17,63 +17,39 @@
             <path d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fill-opacity="0.25"/>
         </svg>
         <section class="colors">
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: #1F2041"></i>
-    <span class="color-desc">
-        <b>Dark Shade 100%</b><br>
-        #1F2041
-    </span>
-</div>
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: rgba(31, 32, 65, 0.75)"></i>
-    <span class="color-desc">
-        <b>Dark Shade 75%</b><br>
-        #1F2041
-    </span>
-</div>
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: rgba(31, 32, 65, 0.50)"></i>
-    <span class="color-desc">
-        <b>Dark Shade 50%</b><br>
-        #1F2041
-    </span>
-</div>
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: rgba(31, 32, 65, 0.25)"></i>
-    <span class="color-desc">
-        <b>Dark Shade 25%</b><br>
-        #1F2041
-    </span>
-</div>
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: rgba(31, 32, 65, 0.05)"></i>
-    <span class="color-desc">
-        <b>Dark Shade 5%</b><br>
-        #1F2041
-    </span>
-</div>
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: #BC9CFF"></i>
-    <span class="color-desc">
-        <b>Purple</b><br>
-        #BC9CFF
-    </span>
-</div>
-            
-                <div class="color">
-    <i class="color-visual" style="background-color: #6FCF97"></i>
-    <span class="color-desc">
-        <b>Green</b><br>
-        #6FCF97
-    </span>
-</div>
-            
+            <% [
+                {
+                    color: '#1F2041',
+                    name: 'Dark Shade 100%',
+                    code: '#1F2041',
+                }, {
+                    color: 'rgba(31, 32, 65, 0.75)',
+                    name: 'Dark Shade 75%',
+                    code: '#1F2041',
+                }, {
+                    color: 'rgba(31, 32, 65, 0.50)',
+                    name: 'Dark Shade 50%',
+                    code: '#1F2041',
+                }, {
+                    color: 'rgba(31, 32, 65, 0.25)',
+                    name: 'Dark Shade 25%',
+                    code: '#1F2041',
+                }, {
+                    color: 'rgba(31, 32, 65, 0.05)',
+                    name: 'Dark Shade 5%',
+                    code: '#1F2041',
+                }, {
+                    color: '#BC9CFF',
+                    name: 'Purple',
+                    code: '#BC9CFF',
+                }, {
+                    color: '#6FCF97',
+                    name: 'Green',
+                    code: '#6FCF97',
+                },
+            ].forEach(color => { %>
+                <%- include('components/color', color); %>
+            <% }) %>
         </section>
         <section class="headers">
             <div class="header">
