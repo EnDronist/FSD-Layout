@@ -1,12 +1,12 @@
 /* Colors & Type */
-$max_width: 1920px;
+@import "_styles.scss";
 body {
     margin: 0;
     padding: 0;
     background: #FFFFFF;
 }
 main {
-    display: flex;
+    display: block;
     width: auto;
     min-width: 320px;
     max-width: 1920px;
@@ -22,6 +22,10 @@ main {
         margin-right: calc((100% - #{$max_width}) / 2);
     }
     align-self: center;
+}
+article {
+    display: flex;  
+    width: 100%;
     // Sections positioning
     flex-direction: column;
     @media (min-width: 800px) {
@@ -30,15 +34,17 @@ main {
 }
 
 /* Site icon */
-.site-icon {
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    left: 30px;
-    top: 30px;
-    path {
-        /* Dark 25% */
-        background: rgba(31, 32, 65, 0.25);
+header {
+    height: 108px;
+    .site-icon {
+        width: 48px;
+        height: 48px;
+        margin-left: 30px;
+        margin-top: 30px;
+        path {
+            /* Dark 25% */
+            background: rgba(31, 32, 65, 0.25);
+        }
     }
 }
 
@@ -46,7 +52,7 @@ main {
 section.colors {
     $width: 270px; width: $width;
     height: 610px;
-    margin-top: 150px;
+    margin-top: 42px;
     // 1280 - 1920+
     @media (min-width: 1280px) {
         margin-left: calc(15%);
@@ -59,13 +65,13 @@ section.colors {
     @media (min-width: 480px) and (max-width: 799px) {
         margin-left: calc(50% - #{$width} / 2);
         margin-right: calc(50% - #{$width} / 2);
-        margin-top: 100px;
+        margin-top: 0px;
     }
     // 320 - 480
     @media (max-width: 479px) {
         margin-left: calc(50% - #{$width} / 2);
         margin-right: calc(50% - #{$width} / 2);
-        margin-top: 100px;
+        margin-top: 0px;
     }
     .color {
         display: flex;
@@ -104,7 +110,7 @@ section.colors {
 /* Section - Headers */
 section.headers {
     $width: 400px; width: $width;
-    margin-top: 150px;
+    margin-top: 42px;
     // 1280 - 1920+
     @media (min-width: 1280px) {
         margin-left: calc(25%);
@@ -118,14 +124,14 @@ section.headers {
         $width: calc(85% - 20px); width: $width;
         margin-left: calc(50% - #{$width} / 2);
         margin-right: calc(50% - #{$width} / 2);
-        margin-top: 50px;
+        margin-top: 60px;
     }
     // 320 - 480
     @media (max-width: 479px) {
         $width: calc(100% - 5px); width: $width;
         margin-left: calc(50% - #{$width} / 2);
         margin-right: calc(50% - #{$width} / 2);
-        margin-top: 50px;
+        margin-top: 60px;
     }
     .header {
         display: flex;

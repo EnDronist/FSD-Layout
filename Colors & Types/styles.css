@@ -6,13 +6,12 @@ body {
 }
 
 main {
-  display: flex;
+  display: block;
   width: auto;
   min-width: 320px;
   max-width: 1920px;
   margin: 5px;
   align-self: center;
-  flex-direction: column;
 }
 @media (max-width: 479px) {
   main {
@@ -26,21 +25,29 @@ main {
     margin-right: calc((100% - 1920px) / 2);
   }
 }
+
+article {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
 @media (min-width: 800px) {
-  main {
+  article {
     flex-direction: row;
   }
 }
 
 /* Site icon */
-.site-icon {
-  position: absolute;
+header {
+  height: 108px;
+}
+header .site-icon {
   width: 48px;
   height: 48px;
-  left: 30px;
-  top: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
 }
-.site-icon path {
+header .site-icon path {
   /* Dark 25% */
   background: rgba(31, 32, 65, 0.25);
 }
@@ -49,7 +56,7 @@ main {
 section.colors {
   width: 270px;
   height: 610px;
-  margin-top: 150px;
+  margin-top: 42px;
 }
 @media (min-width: 1280px) {
   section.colors {
@@ -65,14 +72,14 @@ section.colors {
   section.colors {
     margin-left: calc(50% - 270px / 2);
     margin-right: calc(50% - 270px / 2);
-    margin-top: 100px;
+    margin-top: 0px;
   }
 }
 @media (max-width: 479px) {
   section.colors {
     margin-left: calc(50% - 270px / 2);
     margin-right: calc(50% - 270px / 2);
-    margin-top: 100px;
+    margin-top: 0px;
   }
 }
 section.colors .color {
@@ -112,7 +119,7 @@ section.colors .color .color-desc {
 /* Section - Headers */
 section.headers {
   width: 400px;
-  margin-top: 150px;
+  margin-top: 42px;
 }
 @media (min-width: 1280px) {
   section.headers {
@@ -129,7 +136,7 @@ section.headers {
     width: calc(85% - 20px);
     margin-left: calc(50% - calc(85% - 20px) / 2);
     margin-right: calc(50% - calc(85% - 20px) / 2);
-    margin-top: 50px;
+    margin-top: 60px;
   }
 }
 @media (max-width: 479px) {
@@ -137,7 +144,7 @@ section.headers {
     width: calc(100% - 5px);
     margin-left: calc(50% - calc(100% - 5px) / 2);
     margin-right: calc(50% - calc(100% - 5px) / 2);
-    margin-top: 50px;
+    margin-top: 60px;
   }
 }
 section.headers .header {
