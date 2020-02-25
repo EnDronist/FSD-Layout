@@ -5,30 +5,43 @@ var gulp = require('gulp');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var consolidate = require('gulp-consolidate');
+// Misc
+var colors = require('colors');
 
+// Settings
 sass.compiler = require('sass');
 
 // Compiling SASS(scss) into CSS
-gulp.task('sass', function() {
-    return gulp.src(['./**/*.scss', '!./**/_*.scss', '!./node_modules/**']) // Get source files
-        .pipe(sass()) // Compiles with sass
-        .pipe(gulp.dest('.')); // Outputs the file in the destination folder
-});
+gulp.task('sass', done => (
+    // Gets source files
+    gulp.src(['./*/index.scss', '!./node_modules/**'])
+        // Compiles with sass
+        .pipe(sass().on('error', sass.logError))
+        // Outputs the file in the destination folder
+        .pipe(gulp.dest('.'))
+));
 
 // Consolidating EJS into HTML
-gulp.task('ejs', function() {
-    return gulp.src('./*/index.ejs') // Get source file
-        .pipe(consolidate('ejs')) // Compiles with ejs
+gulp.task('ejs', done => (
+    // Gets source file
+    gulp.src('./*/index.ejs')
+        // Compiles with ejs
+        .pipe(consolidate('ejs').on('error', done))
+        // Renames files from '.ejs' to '.html'
         .pipe(rename(path => ({
             dirname: path.dirname,
             basename: path.basename,
             extname: '.html',
         })))
-        .pipe(gulp.dest(file => file.base)); // Outputs the file in the destination folder
-})
+        // Outputs the file in the destination folder
+        .pipe(gulp.dest(file => file.base))
+));
 
 // Compiling with watch mode
-gulp.task('watch', function() {
-    gulp.watch(['./**/*.scss', '!./**/_*.scss', '!./node_modules/**'], gulp.series('sass'));
+gulp.task('watch', () => {
+    // Watching sass
+    gulp.watch(['./**/*.scss', '!./node_modules/**'], gulp.series('sass'));
+    // Watching ejs
     gulp.watch(['./**/*.ejs', '!./node_modules/**'], gulp.series('ejs'));
+    console.log('Watching started');
 });

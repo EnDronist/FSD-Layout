@@ -1,0 +1,14 @@
+@use "../colors/colors_.scss" as colors;
+@use "../../index_.scss" as index;
+
+// Section
+$minify-limit: index.$medium-width;
+$section-template-margin-left: 100px;
+$section-h-margin: 10px;
+$rest-width: calc(100% - #{colors.$section-width});
+$section-margin-left: calc(#{$section-template-margin-left * (index.$template-width / (index.$template-width - $minify-limit))
+    / index.$template-width} * (100% - #{$rest-width}));
+$section-width: calc(#{$rest-width} - #{$section-h-margin} - #{$section-margin-left});
+// List
+$width: 400px;
+$template-h-margin: 181px - $section-h-margin;

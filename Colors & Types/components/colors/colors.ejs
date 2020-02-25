@@ -1,0 +1,39 @@
+<section class="colors">
+    <ul>
+        <% [
+            {
+                color: '#1F2041',
+                name: 'Dark Shade 100%',
+                code: '#1F2041',
+            }, {
+                color: 'rgba(31, 32, 65, 0.75)',
+                name: 'Dark Shade 75%',
+                code: '#1F2041',
+            }, {
+                color: 'rgba(31, 32, 65, 0.50)',
+                name: 'Dark Shade 50%',
+                code: '#1F2041',
+            }, {
+                color: 'rgba(31, 32, 65, 0.25)',
+                name: 'Dark Shade 25%',
+                code: '#1F2041',
+            }, {
+                color: 'rgba(31, 32, 65, 0.05)',
+                name: 'Dark Shade 5%',
+                code: '#1F2041',
+            }, {
+                color: '#BC9CFF',
+                name: 'Purple',
+                code: '#BC9CFF',
+            }, {
+                color: '#6FCF97',
+                name: 'Green',
+                code: '#6FCF97',
+            },
+        ].forEach(data => { %>
+            <li>
+                <%- include('color', data); %>
+            </li>
+        <% }) %>
+    </ul>
+</section>

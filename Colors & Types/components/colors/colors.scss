@@ -1,0 +1,30 @@
+// Own variables
+@use "colors_.scss" as this;
+// External variables
+@use "../../index_.scss" as index;
+
+/* Section - Colors */
+section.colors {
+    display: flex;
+    // 800 - 1920+
+    @media (min-width: index.$medium-width) {
+        width: this.$section-width;
+        margin-left: this.$section-h-margin;
+        margin-right: this.$section-h-margin;
+    }
+    // 320 - 800
+    @media (max-width: index.$medium-width - 1px) {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    ul {
+        width: this.$width;
+        height: 610px;
+        padding-left: 0px;
+        margin-top: 37px;
+        margin-left: calc(50% - #{this.$width / 2});
+        margin-right: calc(50% - #{this.$width / 2});
+        @import "color.scss";
+    }
+}

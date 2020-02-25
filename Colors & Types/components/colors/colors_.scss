@@ -1,0 +1,8 @@
+@use "../../index_.scss" as index;
+
+$width: 270px;
+$section-h-margin: 10px;
+$template-margin: 150px - $section-h-margin;
+$minify-limit: index.$medium-width;
+$section-width: calc(#{2 * $template-margin * (index.$template-width / (index.$template-width - $minify-limit))
+    / index.$template-width} * (100% - #{$minify-limit}) + #{$width});

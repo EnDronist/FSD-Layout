@@ -1,0 +1,10 @@
+$max-width: 1920px;
+$template-width: 1440px;
+$large-width: 1280px;
+$medium-width: 800px;
+$small-width: 480px;
+$min-width: 320px;
+// @function screen-perc($width) {
+//     $result: calc((100vw - #{$width}) / 100vw);
+//     @return $result;
+// }

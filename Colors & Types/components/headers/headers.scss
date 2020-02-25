@@ -1,0 +1,87 @@
+// Own variables
+@use "headers_.scss" as this;
+// External variables
+@use "../../index_.scss" as index;
+
+/* Section - Headers */
+section.headers {
+    display: flex;
+    // 800 - 1920+
+    @media (min-width: index.$medium-width) {
+        width: this.$section-width;
+        margin-left: this.$section-margin-left;
+        margin-right: this.$section-h-margin;
+        margin-top: 37px;
+    }
+    // 320 - 800
+    @media (max-width: index.$medium-width - 1px) {
+        width: calc(100% - 10px);
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 60px;
+    }
+    ul {
+        padding-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        // 800 - 1920+
+        @media (min-width: index.$medium-width) {
+            max-width: 400px;
+            margin-left: calc(50% - #{this.$width / 2});
+            margin-right: calc(50% - #{this.$width / 2});
+        }
+        // 320 - 800
+        @media (max-width: index.$medium-width - 1px) {
+            width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        li.header {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 50px;
+            &:last-child {
+                margin-bottom: unset;
+            }
+            .header-tag {
+                display: block;
+                min-width: 40px;
+                font-family: Montserrat;
+                text-align: right;
+                font-weight: normal;
+                /* Dark 25% */
+                color: rgba(31, 32, 65, 0.25);
+            }
+            .header-desc {
+                font-family: Quicksand;
+                text-align: left;
+                margin-left: 30px;
+            }
+            h1 {
+                font-weight: bold;
+                font-size: 24px;
+                line-height: 29px;
+                margin: 0px;
+            }
+            h2 {
+                font-weight: bold;
+                font-size: 19px;
+                line-height: 23px;
+                margin: 0px;
+            }
+            h3 {
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 15px;
+                text-transform: uppercase;
+                margin: 0px;
+            }
+            span {
+                font-size: 14px;
+                line-height: 24px;
+                margin: 0px;
+            }
+        }
+    }
+}

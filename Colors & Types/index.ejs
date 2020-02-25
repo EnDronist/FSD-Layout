@@ -5,7 +5,7 @@
     <!-- Options -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 </head>
@@ -19,59 +19,8 @@
             </svg>
         </header>
         <article>
-            <section class="colors">
-                <% [
-                    {
-                        color: '#1F2041',
-                        name: 'Dark Shade 100%',
-                        code: '#1F2041',
-                    }, {
-                        color: 'rgba(31, 32, 65, 0.75)',
-                        name: 'Dark Shade 75%',
-                        code: '#1F2041',
-                    }, {
-                        color: 'rgba(31, 32, 65, 0.50)',
-                        name: 'Dark Shade 50%',
-                        code: '#1F2041',
-                    }, {
-                        color: 'rgba(31, 32, 65, 0.25)',
-                        name: 'Dark Shade 25%',
-                        code: '#1F2041',
-                    }, {
-                        color: 'rgba(31, 32, 65, 0.05)',
-                        name: 'Dark Shade 5%',
-                        code: '#1F2041',
-                    }, {
-                        color: '#BC9CFF',
-                        name: 'Purple',
-                        code: '#BC9CFF',
-                    }, {
-                        color: '#6FCF97',
-                        name: 'Green',
-                        code: '#6FCF97',
-                    },
-                ].forEach(color => { %>
-                    <%- include('components/color', color); %>
-                <% }) %>
-            </section>
-            <section class="headers">
-                <div class="header">
-                    <h1 class="header-tag">H1</h1>
-                    <h1 class="header-desc">This one is the sub-section or widget title</h1>
-                </div>
-                <div class="header">
-                    <h2 class="header-tag">H2</h2>
-                    <h2 class="header-desc">Next one is the item title inside widgets</h2>
-                </div>
-                <div class="header">
-                    <h3 class="header-tag">H3</h3>
-                    <h3 class="header-desc">This is a label or CTA text</h3>
-                </div>
-                <div class="header">
-                    <span class="header-tag">Body</span>
-                    <span class="header-desc">This is the body text which is used for most of the design, like paragraphs, lists, etc.</span>
-                </div>
-            </section>
+            <%- include('components/colors/colors', {}); %>
+            <%- include('components/headers/headers', {}); %>
         </article>
     </main>
 </body>
