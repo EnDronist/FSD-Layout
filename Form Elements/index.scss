@@ -1,0 +1,40 @@
+// Main variables
+@use "index_.scss" as index;
+
+/* Colors & Type */
+body {
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+}
+main {
+    display: block;
+    width: auto;
+    min-width: index.$min_width;
+    max-width: index.$max_width;
+    margin: 0px;
+    // Disable margin for small resolutions
+    // @media (max-width: index.$small_width - 1px) {
+    //     margin-left: 0px;
+    //     margin-right: 0px;
+    // }
+    // Adding side empty spaces for large resolutions
+    @media (min-width: 1930px) {
+        margin-left: calc((100% - #{index.$max_width}) / 2);
+        margin-right: calc((100% - #{index.$max_width}) / 2);
+    }
+    align-self: center;
+}
+article {
+    display: flex;  
+    width: 100%;
+    // Sections positioning
+    flex-direction: column;
+    @media (min-width: 800px) {
+        flex-direction: row;
+    }
+}
+
+@import "components/header/header.scss";
+
+@import "components/article/article.scss";

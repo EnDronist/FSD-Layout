@@ -1,0 +1,14 @@
+/* Site header with icon */
+header {
+    height: 108px;
+    .site-icon {
+        width: 48px;
+        height: 48px;
+        margin-left: 30px;
+        margin-top: 30px;
+        path {
+            /* Dark 25% */
+            background: rgba(31, 32, 65, 0.25);
+        }
+    }
+}

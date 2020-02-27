@@ -6,6 +6,7 @@ var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var consolidate = require('gulp-consolidate');
 // Misc
+var path = require('path');
 var colors = require('colors');
 
 // Settings
@@ -26,7 +27,7 @@ gulp.task('ejs', done => (
     // Gets source file
     gulp.src('./*/index.ejs')
         // Compiles with ejs
-        .pipe(consolidate('ejs').on('error', done))
+        .pipe(consolidate('ejs', { path: path, root: __dirname }).on('error', done))
         // Renames files from '.ejs' to '.html'
         .pipe(rename(path => ({
             dirname: path.dirname,

@@ -1,3 +1,4 @@
+<% const __dirname = root; %>
 <!DOCTYPE html>
 <head>
     <!-- jQuery -->
@@ -11,12 +12,14 @@
 </head>
 <body>
     <main>
+        <% console.log(path.relative(root, path.join(__dirname, 'components/header'))) %>
         <header>
-            <%- include('../common/icon', {}); %>
+            <% include(path.relative(root, path.join(__dirname, 'components/header/header')),
+                { __dirname: path.join(__dirname, 'components/header') }); %>
         </header>
         <article>
-            <%- include('components/colors/colors', {}); %>
-            <%- include('components/headers/headers', {}); %>
+            <!-- include(path.join(root, 'components/article/article'),
+                { root: root + '../../' }); -->
         </article>
     </main>
 </body>
