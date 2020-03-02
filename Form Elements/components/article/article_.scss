@@ -1,0 +1,16 @@
+$column-width: 320px;
+$article-h-margin: 10px;
+// Resolution threshold
+$columns-number: 3;
+$resolution-threshold: $column-width * $columns-number
+    + $article-h-margin * (2 /* Left and right indents */ + $columns-number - 1);
+// Margins
+$margin-first: 141px;
+$margin-second: 126px;
+$margin-third: 72px;
+$margin-rest: 141px;
+$margin-sum: $margin-first + $margin-second + $margin-third + $margin-rest;
+$margin-first: $margin-first / $margin-sum;
+$margin-second: $margin-second / $margin-sum;
+$margin-third: $margin-third / $margin-sum;
+$margin-rest: $margin-rest / $margin-sum;

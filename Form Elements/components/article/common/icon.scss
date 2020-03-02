@@ -1,0 +1,13 @@
+.icon {
+    // Special
+    user-select: none;
+    // Display
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Font
+    font-family: Material Icons;
+    &.clickable {
+        cursor: pointer;
+    }
+}

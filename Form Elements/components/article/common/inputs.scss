@@ -1,0 +1,84 @@
+// Inputs (input, select/dropdown, input-submit)
+@mixin input-common {
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 15px;
+    // Font
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    // Colors
+    background: #FFFFFF;
+}
+
+// Input with default type (input)
+input {
+    @include input-common;
+    &.default {
+        border: 1px solid index.$dark-25;
+        // Font
+        color: index.$dark-75;
+        // &:hover, &:focus {
+        //     border: 1px solid index.$dark-50;
+        // }
+        &::placeholder {
+            color: index.$dark-25;
+        }
+    }
+    &.hover-focus {
+        border: 1px solid index.$dark-50;
+        // Font
+        color: index.$dark-75;
+        &::placeholder {
+            color: index.$dark-75;
+        }
+    }
+}
+
+// Custom inputs (select/dropdown, input-submit)
+.custom-input {
+    @include input-common;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    // Colors
+    border: 1px solid index.$dark-25;
+    color: index.$dark-75;
+    span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &.placeholder {
+            color: index.$dark-25;
+        }
+    }
+    .icon {
+        width: 44px; min-width: 44px;
+        height: inherit;
+        // Font
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+// Dropdown
+.dropdown {
+    .icon {
+        // Colors
+        color: index.$dark-50;
+    }
+}
+
+// Input submit
+.input-submit {
+    .icon {
+        // Colors
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

@@ -1,0 +1,33 @@
+.checkbox {
+    // Default
+    display: inline-flex;
+    .checkbox__icon {
+        width: 20px; min-width: 20px;
+        height: 20px; min-height: 20px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-color: white;
+        * {
+            margin-bottom: 1px;
+            visibility: hidden;
+        }
+    }
+    .checkbox__description {
+        margin-left: 10px;
+        margin-top: 1px;
+        font-size: 14px;
+        line-height: 18px;
+        color: index.$dark-50;
+    }
+    // Selected
+    &.selected {
+        .checkbox__icon {
+            border: 1px solid #BC9CFF;
+            * { visibility: visible; }
+        }
+    }
+}
+// Indent control for group
+.input-group.row .checkbox { margin-left: 20px; }
+.input-group.column .checkbox { margin-top: 10px; }

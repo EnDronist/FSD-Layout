@@ -1,24 +1,181 @@
 
+
+
 <!DOCTYPE html>
 <head>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Options -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <main>
-        
         <header>
-            
-        </header>
+    <img class="site-icon" src="../../../common/icon.svg">
+</header>
         <article>
-            <!-- include(path.join(root, 'components/article/article'),
-                { root: root + '../../' }); -->
-        </article>
+    <section class="top">
+    <div class="section-column first">
+    <!-- text_field_default -->
+    <div class="form-group width-large indent-large">
+        <div class="form-group__description">
+            <label for="text_field_default" class="indent">Text Field</label>
+            <span>Default</span>
+        </div>
+        <input id="text_field_default" class="default" placeholder="Email">
+    </div>
+    <!-- text_field_hover_focus -->
+    <div class="form-group width-large indent-small">
+        <div class="form-group__description">
+            <label for="text_field_hover_focus" class="indent">Text Field</label>
+            <span>Hover / Focus</span>
+        </div>
+        <input id="text_field_hover_focus" class="hover-focus" placeholder="Email">
+    </div>
+    <!-- dropdown -->
+    <div class="form-group width-large indent-small">
+        <div class="form-group__description">
+            <label for="dropdown" class="indent">Text Field</label>
+            <span>Default</span>
+        </div>
+        <!-- <select id="dropdown">
+            <option value="" disabled selected hidden>Сколько гостей</option>
+            <option value="0">First</option>
+            <option value="1">Second</option>
+            <option value="2">Third</option>
+        </select> -->
+        <div id="dropdown" class="custom-input dropdown">
+            <span>Сколько гостей</span>
+            <div class="icon clickable">expand_more</div>
+        </div>
+    </div>
+    <!-- masked_text_field -->
+    <div class="form-group width-large indent-small">
+        <div class="form-group__description">
+            <label for="masked_text_field" class="indent">Masked Text Field</label>
+            <span>Default</span>
+        </div>
+        <input id="masked_text_field" class="default" placeholder="ДД.ММ.ГГГГ">
+    </div>
+    <!-- date_dropdowns -->
+    <div class="row-extend indent-large">
+        <!-- date_dropdown_left -->
+        <div class="form-group width-tiny">
+            <div class="form-group__description">
+                <label for="date_dropdown_left" class="indent">Date Dropdown</label>
+            </div>
+            <div id="date_dropdown_left" class="custom-input dropdown">
+                <span>ДД.ММ.ГГГГ</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
+        </div>
+        <!-- date_dropdown_right -->
+        <div class="form-group width-tiny">
+            <div class="form-group__description">
+                <label for="date_dropdown_right" class="indent">Date Dropdown</label>
+            </div>
+            <div id="date_dropdown_right" class="custom-input dropdown">
+                <span>19.08.2019</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
+        </div>
+    </div>
+    <!-- filter_date_dropdown -->
+    <div class="form-group width-medium indent-large">
+        <div class="form-group__description">
+            <label for="filter_date_dropdown" class="indent">Filter Date Dropdown</label>
+        </div>
+        <div id="filter_date_dropdown" class="custom-input dropdown">
+            <span>19 авг - 23 авг</span>
+            <div class="icon clickable">expand_more</div>
+        </div>
+    </div>
+    <!-- filter_date_dropdown -->
+    <div class="form-group width-medium indent-large">
+        <div class="form-group__description">
+            <label for="filter_date_dropdown" class="indent">Subscription Text Field</label>
+        </div>
+        <div id="filter_date_dropdown" class="custom-input input-submit">
+            <span class="placeholder">Email</span>
+            <div class="icon clickable">arrow_forward</div>
+        </div>
+    </div>
+</div>
+    <div class="section-column second">
+    <!-- checkbox_buttons -->
+    <div class="form-group width-medium indent-large">
+        <div class="form-group__description">
+            <label for="checkbox_buttons">Checkbox Buttons</label>
+        </div>
+        <div id="checkbox_buttons" class="input-group column">
+            <div class="checkbox">
+                <div class="checkbox__icon icon clickable">
+                    <img src="../common/form/checkbox-mark.svg">
+                </div>
+                <span class="checkbox__description">Можно курить</span>
+            </div>
+            <div class="checkbox selected">
+                <div class="checkbox__icon icon clickable">
+                    <img src="../common/form/checkbox-mark.svg">
+                </div>
+                <span class="checkbox__description">Можно с питомцами</span>
+            </div>
+            <div class="checkbox selected">
+                <div class="checkbox__icon icon clickable">
+                    <img src="../common/form/checkbox-mark.svg">
+                </div>
+                <span class="checkbox__description">Можно пригласить гостей<br>(до 10 человек)</span>
+            </div>
+        </div>
+    </div>
+    <!-- radio_buttons -->
+    <div class="form-group width-medium indent-large">
+        <div class="form-group__description">
+            <label for="radio_buttons">Radio Buttons</label>
+        </div>
+        <div id="radio_buttons" class="input-group row">
+            <div class="radiobutton selected">
+                <div class="radiobutton__icon icon clickable">
+                    <img src="../common/form/radiobutton-mark-selected.svg">
+                </div>
+                <span class="radiobutton__description">Мужчина</span>
+            </div>
+            <div class="radiobutton">
+                <div class="radiobutton__icon icon clickable">
+                    <img src="../common/form/radiobutton-mark.svg">
+                </div>
+                <span class="radiobutton__description">Женщина</span>
+            </div>
+        </div>
+    </div>
+    <!-- toogles -->
+    <div class="form-group width-medium indent-large">
+        <div class="form-group__description">
+            <label for="toogles">Toogle</label>
+        </div>
+        <div id="toogles" class="input-group column">
+            <div class="toogle selected">
+                <div class="toogle__icon icon clickable">
+                    <img src="../common/form/radiobutton-mark-selected.svg">
+                </div>
+                <span class="toogle__description">Получать спецпредложения</span>
+            </div>
+            <div class="toogle">
+                <div class="toogle__icon icon clickable">
+                    <img src="../common/form/radiobutton-mark.svg">
+                </div>
+                <span class="toogle__description">Получать спецпредложения</span>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="column third">
+
+</div>
+</section>
+</article>
     </main>
 </body>

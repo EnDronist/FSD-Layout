@@ -1,25 +1,19 @@
+<% root = path.join(root, 'Form Elements'); %>
 <% const __dirname = root; %>
+<% const ejsRoute = new EjsRoute(root, 'ejsRoute'); %>
 <!DOCTYPE html>
 <head>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Options -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <main>
-        <% console.log(path.relative(root, path.join(__dirname, 'components/header'))) %>
-        <header>
-            <% include(path.relative(root, path.join(__dirname, 'components/header/header')),
-                { __dirname: path.join(__dirname, 'components/header') }); %>
-        </header>
-        <article>
-            <!-- include(path.join(root, 'components/article/article'),
-                { root: root + '../../' }); -->
-        </article>
+        <%- ejsRoute.include(include, __dirname, 'components/header/header') %>
+        <%- ejsRoute.include(include, __dirname, 'components/article/article') %>
     </main>
 </body>

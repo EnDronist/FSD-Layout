@@ -1,5 +1,6 @@
 // Main variables
 @use "index_.scss" as index;
+@use "components/article/article_.scss" as article;
 
 /* Colors & Type */
 body {
@@ -13,28 +14,20 @@ main {
     min-width: index.$min_width;
     max-width: index.$max_width;
     margin: 0px;
-    // Disable margin for small resolutions
-    // @media (max-width: index.$small_width - 1px) {
-    //     margin-left: 0px;
-    //     margin-right: 0px;
-    // }
+    align-self: center;
     // Adding side empty spaces for large resolutions
     @media (min-width: 1930px) {
         margin-left: calc((100% - #{index.$max_width}) / 2);
         margin-right: calc((100% - #{index.$max_width}) / 2);
     }
-    align-self: center;
-}
-article {
-    display: flex;  
-    width: 100%;
-    // Sections positioning
-    flex-direction: column;
-    @media (min-width: 800px) {
-        flex-direction: row;
+    // High resolution
+    @media (min-width: article.$resolution-threshold) {
+        margin-bottom: 132px;
+    }
+    // Low resolution
+    @media (max-width: article.$resolution-threshold - 1) {
+        margin-bottom: 40px;
     }
 }
-
 @import "components/header/header.scss";
-
 @import "components/article/article.scss";

@@ -1,5 +1,5 @@
 @use "../colors/colors_.scss" as colors;
-@use "../../index_.scss" as index;
+@use "../../../index_.scss" as index;
 
 // Section
 $minify-limit: index.$medium-width;
