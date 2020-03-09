@@ -1,0 +1,69 @@
+@use "../../colors_.scss" as colors;
+
+// Constants
+$working-height: 16px;
+$bar-height: 6px;
+$bar-border-size: 1px;
+$point-size: 12px;
+$point-border: 2px;
+// Configured
+$start: 30%;
+$end: 64%;
+
+.range-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    height: $working-height;
+    .range-slider__full-bar {
+        width: inherit;
+        height: $bar-height - $bar-border-size * 2;
+        border: $bar-border-size solid colors.$dark-25;
+        box-sizing: content-box;
+        border-radius: $bar-height / 2;
+        .range-slider__active-bar-wrapper /* Need for transform active bar based on full bar width */ {
+            position: absolute;
+            width: inherit;
+            height: $bar-height;
+            transform: translate(-$bar-border-size, -$bar-border-size) /* Back to parent position */
+                translate($start);
+            .range-slider__active-bar {
+                width: $end - $start;
+                height: $bar-height;
+                border-radius: $bar-height / 2;
+                background: colors.$green-gradient;
+            }
+            @mixin point {
+                $full-size: $point-size + $point-border * 2;
+                cursor: pointer;
+                position: absolute;
+                width: $point-size;
+                height: $point-size;
+                border: $point-border solid white;
+                border-radius: $full-size / 2;
+                transform: translate(
+                    -$full-size / 2,
+                    ($bar-height - $full-size) / 2
+                );
+                // Color
+                background: colors.$green-gradient;
+            }
+            .range-slider__start-point {
+                @include point;
+            }
+            .range-slider__end-point-wrapper /* Need for transform end point based on active bar width */ {
+                position: absolute;
+                width: inherit;
+                height: inherit;
+                transform: translate(100%);
+                .range-slider__end-point {
+                    @include point;
+                }
+            }
+        }
+    }
+}
+// Indent control for group
+.row > .range-slider { margin-left: 20px; }
+.column > .range-slider { margin-top: 20px; }

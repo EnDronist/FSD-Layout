@@ -1,0 +1,58 @@
+@use "../../colors_.scss" as colors;
+
+// Constants
+$size: 40px;
+$icon-size: 24px;
+
+.pagination {
+    .pagination__buttons {
+        user-select: none;
+        .pagination__button {
+            cursor: pointer;
+            // Display
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: $size;
+            height: $size;
+            // Label
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            color: colors.$dark-50;
+            &.active {
+                border-radius: $size / 2;
+                background: colors.$purple-gradient;
+                color: white;
+            }
+            &.next {
+                @include icon;
+                @include clickable;
+                border-radius: $size / 2;
+                background: colors.$green-gradient;
+                color: white;
+                // Font
+                font-size: $icon-size;
+                line-height: $icon-size;
+            }
+            &.disabled {
+                cursor: default;
+            }
+        }
+    }
+    .pagination__afterword {
+        // Text
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        // Color
+        color: colors.$dark-75;
+    }
+}
+// Indent control for group
+.row > .pagination { margin-left: 20px; }
+.column > .pagination { margin-top: 20px; }

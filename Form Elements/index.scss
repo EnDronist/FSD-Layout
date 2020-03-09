@@ -3,10 +3,14 @@
 @use "components/article/article_.scss" as article;
 
 /* Colors & Type */
-body {
+html, body {
     margin: 0;
     padding: 0;
     background: #FFFFFF;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+body {
+    position: relative;
 }
 main {
     display: block;

@@ -1,29 +1,21 @@
-@use "../../../index_.scss" as index;
-@use "common_.scss" as this;
+@use "index_.scss" as this;
 
 /// Form Groups
+/* Insert here any new element */
 @import "icon.scss";
 @import "inputs.scss";
 @import "checkbox.scss";
 @import "radiobutton.scss";
 @import "toogle.scss";
+@import "like-button.scss";
+@import "rate-button.scss";
+@import "range-slider.scss";
+@import "button.scss";
+@import "pagination.scss";
+// Final import
 @import "input-group.scss";
 
 /// Additional classes
-// Form-group direction
-.row {
-    display: flex;
-    flex-direction: row;
-}
-.row-extend {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.column {
-    display: flex;
-    flex-direction: column;
-}
 // Form-group width
 .width-tiny { width: this.$width-tiny; }
 .width-small { width: this.$width-small; }

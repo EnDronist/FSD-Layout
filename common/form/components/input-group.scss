@@ -1,0 +1,26 @@
+// Indent control for input groups
+// Additional configs sets in input elements
+.input-group {
+    width: inherit;
+    margin-top: 16px;
+}
+// Marginal elements indent control
+.row {
+    display: flex;
+    flex-direction: row;
+    & > *:first-child { margin-left: 0; }
+    & > *:last-child { margin-right: 0; }
+}
+.row-extend {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > *:first-child { margin-left: 0; }
+    & > *:last-child { margin-right: 0; }
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    & > *:first-child { margin-top: 0; }
+    & > *:last-child { margin-bottom: 0; }
+}

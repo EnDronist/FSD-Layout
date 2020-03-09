@@ -1,0 +1,40 @@
+@use "../../colors_.scss" as colors;
+
+// Constants
+$button-size: 20px;
+$check-mark-size: 10px;
+
+.checkbox {
+    // Default
+    display: inline-flex;
+    .checkbox__icon {
+        width: $button-size; min-width: $button-size;
+        height: $button-size; min-height: $button-size;
+        border: 1px solid colors.$dark-25;
+        box-sizing: border-box;
+        border-radius: $button-size / 5;
+        // Color
+        background-color: white;
+    }
+    .checkbox__description {
+        margin-left: 10px;
+        margin-top: 1px;
+        font-size: 14px;
+        line-height: 18px;
+        color: colors.$dark-50;
+    }
+    // Selected
+    &.selected {
+        .checkbox__icon {
+            border: 1px solid #BC9CFF;
+            // Image
+            background-image: url("../common/form/icons/check-mark.svg");
+            background-size: $check-mark-size;
+            background-repeat: no-repeat;
+            background-position: center calc(50% - 1px);
+        }
+    }
+}
+// Indent control for group
+.row > .checkbox { margin-left: 20px; }
+.column > .checkbox { margin-top: 10px; }

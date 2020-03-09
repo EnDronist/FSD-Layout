@@ -14,7 +14,7 @@
 <body>
     <main>
         <header>
-    <img class="site-icon" src="../../../common/icon.svg">
+    <img class="site-icon" src="../common/site-icon.svg">
 </header>
         <article>
     <section class="top">
@@ -112,21 +112,15 @@
         </div>
         <div id="checkbox_buttons" class="input-group column">
             <div class="checkbox">
-                <div class="checkbox__icon icon clickable">
-                    <img src="../common/form/checkbox-mark.svg">
-                </div>
+                <div class="checkbox__icon icon clickable"></div>
                 <span class="checkbox__description">Можно курить</span>
             </div>
             <div class="checkbox selected">
-                <div class="checkbox__icon icon clickable">
-                    <img src="../common/form/checkbox-mark.svg">
-                </div>
+                <div class="checkbox__icon icon clickable"></div>
                 <span class="checkbox__description">Можно с питомцами</span>
             </div>
             <div class="checkbox selected">
-                <div class="checkbox__icon icon clickable">
-                    <img src="../common/form/checkbox-mark.svg">
-                </div>
+                <div class="checkbox__icon icon clickable"></div>
                 <span class="checkbox__description">Можно пригласить гостей<br>(до 10 человек)</span>
             </div>
         </div>
@@ -138,15 +132,11 @@
         </div>
         <div id="radio_buttons" class="input-group row">
             <div class="radiobutton selected">
-                <div class="radiobutton__icon icon clickable">
-                    <img src="../common/form/radiobutton-mark-selected.svg">
-                </div>
+                <div class="radiobutton__icon icon clickable"></div>
                 <span class="radiobutton__description">Мужчина</span>
             </div>
             <div class="radiobutton">
-                <div class="radiobutton__icon icon clickable">
-                    <img src="../common/form/radiobutton-mark.svg">
-                </div>
+                <div class="radiobutton__icon icon clickable"></div>
                 <span class="radiobutton__description">Женщина</span>
             </div>
         </div>
@@ -158,22 +148,134 @@
         </div>
         <div id="toogles" class="input-group column">
             <div class="toogle selected">
-                <div class="toogle__icon icon clickable">
-                    <img src="../common/form/radiobutton-mark-selected.svg">
-                </div>
+                <div class="toogle__icon icon clickable"></div>
                 <span class="toogle__description">Получать спецпредложения</span>
             </div>
             <div class="toogle">
-                <div class="toogle__icon icon clickable">
-                    <img src="../common/form/radiobutton-mark.svg">
-                </div>
+                <div class="toogle__icon icon clickable"></div>
                 <span class="toogle__description">Получать спецпредложения</span>
             </div>
         </div>
     </div>
+    <!-- like_buttons -->
+    <div class="form-group width-tiny indent-large">
+        <div class="form-group__description">
+            <label for="like_buttons">Like Button</label>
+        </div>
+        <div id="like_buttons" class="input-group row">
+            <div class="like-button">
+                <div class="like-button__container">
+                    <div class="like-button__heart icon clickable"></div>
+                    <div class="like-button__counter">2</div>
+                </div>
+            </div>
+            <div class="like-button selected">
+                <div class="like-button__container">
+                    <div class="like-button__heart icon clickable"></div>
+                    <div class="like-button__counter">12</div>
+                </div>
+            </div>
+            <div class="like-button selected">
+                <div class="like-button__container">
+                    <div class="like-button__heart icon clickable"></div>
+                    <div class="like-button__counter">1234</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rate_buttons -->
+    <div class="form-group width-medium indent-large row">
+        <div class="form-group__description">
+            <label for="rate_buttons">Rate Button</label>
+        </div>
+        <div id="rate_buttons" class="input-group row">
+            <div class="rate-button row">
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element"></div>
+            </div>
+            <div class="rate-button row">
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+                <div class="rate-button__element selected"></div>
+            </div>
+        </div>
+    </div>
 </div>
-    <div class="column third">
-
+    <div class="section-column third">
+    <!-- range_slider -->
+    <div class="form-group width-medium indent-large">
+        <div class="form-group__description">
+            <label for="range_slider">Range Slider</label>
+            <span>5 000₽ - 10 000₽</span>
+        </div>
+        <div id="range_slider" class="input-group column">
+            <div class="range-slider">
+                <div class="range-slider__full-bar">
+                    <div class="range-slider__active-bar-wrapper">
+                        <div class="range-slider__active-bar">
+                            <div class="range-slider__start-point"></div>
+                            <div class="range-slider__end-point-wrapper">
+                                <div class="range-slider__end-point"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- buttons -->
+    <div class="form-group width-large indent-large">
+        <div class="form-group__description">
+            <label for="buttons">Buttons</label>
+        </div>
+        <div id="buttons" class="input-group column">
+            <div class="row">
+                <div class="button">Click Me</div>
+                <div class="button disabled">Click Me</div>
+            </div>
+            <div class="row indent-medium">
+                <div class="button bordered">
+                    <div class="button__container">Click Me</div>
+                </div>
+                <div class="button bordered disabled">
+                    <div class="button__container">Click Me</div>
+                </div>
+            </div>
+            <div class="row indent-medium">
+                <div class="button inline">Click Me</div>
+                <div class="button inline disabled">Click Me</div>
+            </div>
+            <div class="row indent-medium">
+                <div class="button submit">
+                    <span>Перейти к оплате</span>
+                    <div class="button__icon icon clickable">arrow_forward</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- pagination -->
+    <div class="form-group width-large indent-large">
+        <div class="form-group__description">
+            <label for="pagination">Pagination</label>
+        </div>
+        <div id="pagination" class="input-group row">
+            <div class="pagination column">
+                <div class="pagination__buttons row">
+                    <div class="pagination__button active">1</div>
+                    <div class="pagination__button">2</div>
+                    <div class="pagination__button">3</div>
+                    <div class="pagination__button">...</div>
+                    <div class="pagination__button">15</div>
+                    <div class="pagination__button next">arrow_forward</div>
+                </div>
+                <div class="pagination__afterword indent-tiny">1 – 12 из 100+ вариантов аренды</div>
+            </div>
+        </div>
 </div>
 </section>
 </article>

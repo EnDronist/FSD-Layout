@@ -1,0 +1,29 @@
+@use "../../colors_.scss" as colors;
+
+// Constants
+$element-width: 24px;
+$element-height: 24px;
+
+.rate-button {
+    // Horizontal
+    display: inline-flex;
+    // Vertical
+    &.vertical { display: flex; }
+    .rate-button__element {
+        // Default
+        display: flex;
+        width: $element-width;
+        height: $element-height;
+        // Image
+        background-image: url("../common/form/icons/star-empty.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        // Selected
+        &.selected {
+            background-image: url("../common/form/icons/star.svg");
+        }
+    }
+}
+// Indent control for group
+.row > .rate-button { margin-left: 20px; }
+.column > .rate-button { margin-top: 20px; }

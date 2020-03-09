@@ -1,0 +1,41 @@
+@use "../../colors_.scss" as colors;
+
+// Constants
+$width: 40px;
+$height: 20px;
+$point-size: 12px;
+
+.toogle {
+    // Default
+    display: inline-flex;
+    .toogle__icon {
+        width: $width; min-width: $width;
+        height: $height; min-height: $height;
+        border: 1px solid colors.$dark-25;
+        box-sizing: border-box;
+        border-radius: $height / 2;
+        background-color: white;
+        background-image: url("../common/form/icons/point-inactive.svg");
+        background-size: $point-size $point-size;
+        background-repeat: no-repeat;
+        background-position: left #{($height - 2 /* border */ - $point-size) / 2} center;
+    }
+    .toogle__description {
+        margin-left: 10px;
+        margin-top: 1px;
+        font-size: 14px;
+        line-height: 18px;
+        color: colors.$dark-75;
+    }
+    // Selected
+    &.selected {
+        .toogle__icon {
+            border: 1px solid #BC9CFF;
+            background-image: url("../common/form/icons/point.svg");
+            background-position: right #{($height - 2 /* border */ - $point-size) / 2} center;
+        }
+    }
+}
+// Indent control for group
+.row > .toogle { margin-left: 20px; }
+.column > .toogle { margin-top: 14px; }

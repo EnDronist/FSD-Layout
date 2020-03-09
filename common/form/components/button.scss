@@ -1,0 +1,91 @@
+@use "index_.scss" as index;
+@use "../../colors_.scss" as colors;
+
+// Constants
+$width: 100px;
+$submit-width: index.$width-large;
+$height: 44px;
+$border-size: 2px;
+
+.button {
+    /// Default
+    cursor: pointer;
+    // Display
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // Position
+    width: $width;
+    height: $height;
+    border-radius: min($width, $height) / 2;
+    background: colors.$purple-gradient;
+    // Label
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: white;
+    /// Disabled
+    &.disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+    /// Bordered version
+    &.bordered {
+        background: colors.$purple-gradient;
+        .button__container {
+            // Display
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // Position
+            $container-width: $width - $border-size * 2;
+            $container-height: $height - $border-size * 2;
+            width: $container-width;
+            height: $container-height;
+            border-radius: min($container-width, $container-height) / 2;
+            background: white;
+            // Label
+            color: colors.$purple;
+        }
+    }
+    /// Inline version
+    &.inline {
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background: none;
+        // Label
+        color: colors.$purple;
+        /// Disabled
+        &.disabled {
+            color: colors.$dark-50;
+            opacity: 1;
+        }
+    }
+    /// Submit version
+    &.submit {
+        width: $submit-width;
+        span {
+            width: calc(100% - #{$height} * 2);
+            margin-left: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button__icon {
+            @include icon;
+            @include clickable;
+            float: right;
+            width: $height;
+            height: $height;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+}
+// Indent control for group
+.row > .button { margin-left: 20px; }
+.column > .button { margin-top: 20px; }

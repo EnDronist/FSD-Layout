@@ -6,7 +6,4 @@ $medium-width: 800px;
 $small-width: 480px;
 $min-width: 320px;
 // Colors
-$dark-100: #1F2041;
-$dark-75: rgba(31, 32, 65, 0.75);
-$dark-50: rgba(31, 32, 65, 0.5);
-$dark-25: rgba(31, 32, 65, 0.25);
+@import "../common/colors_.scss";

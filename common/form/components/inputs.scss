@@ -1,3 +1,5 @@
+@use "../../colors_.scss" as colors;
+
 // Inputs (input, select/dropdown, input-submit)
 @mixin input-common {
     height: 44px;
@@ -18,22 +20,22 @@
 input {
     @include input-common;
     &.default {
-        border: 1px solid index.$dark-25;
+        border: 1px solid colors.$dark-25;
         // Font
-        color: index.$dark-75;
+        color: colors.$dark-75;
         // &:hover, &:focus {
         //     border: 1px solid index.$dark-50;
         // }
         &::placeholder {
-            color: index.$dark-25;
+            color: colors.$dark-25;
         }
     }
     &.hover-focus {
-        border: 1px solid index.$dark-50;
+        border: 1px solid colors.$dark-50;
         // Font
-        color: index.$dark-75;
+        color: colors.$dark-75;
         &::placeholder {
-            color: index.$dark-75;
+            color: colors.$dark-75;
         }
     }
 }
@@ -45,14 +47,14 @@ input {
     align-items: center;
     justify-content: space-between;
     // Colors
-    border: 1px solid index.$dark-25;
-    color: index.$dark-75;
+    border: 1px solid colors.$dark-25;
+    color: colors.$dark-75;
     span {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         &.placeholder {
-            color: index.$dark-25;
+            color: colors.$dark-25;
         }
     }
     .icon {
@@ -67,16 +69,20 @@ input {
 // Dropdown
 .dropdown {
     .icon {
+        @include icon;
+        @include clickable;
         // Colors
-        color: index.$dark-50;
+        color: colors.$dark-50;
     }
 }
 
 // Input submit
 .input-submit {
     .icon {
+        @include icon;
+        @include clickable;
         // Colors
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        background: colors.$purple-gradient;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;

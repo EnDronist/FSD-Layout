@@ -1,10 +1,10 @@
 @use "../../index_.scss" as index;
-@use "common/common_.scss" as common;
+@use "../../../common/form/components/index_.scss" as form;
 @use "article_.scss" as this;
 
 article {
     // Styles
-    @import "common/common.scss";
+    @import "../../../common/form/components/index.scss";
     // Display
     display: flex;
     margin-top: 32px;
@@ -50,7 +50,7 @@ article {
                 margin-left: calc(50% - #{this.$column-width / 2});
                 margin-right: calc(50% - #{this.$column-width / 2});
                 // Sections indent when all in one column
-                margin-top: common.$indent-large;
+                margin-top: form.$indent-large;
                 &:first-child { margin-top: 0; }
                 &:last-child { margin-bottom: 0; }
             }

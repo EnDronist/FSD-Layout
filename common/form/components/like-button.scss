@@ -1,0 +1,66 @@
+@use "../../colors_.scss" as colors;
+
+// Constants
+$min-width: 40px;
+$height: 20px;
+$padding: 1px;
+
+.like-button {
+    // Default
+    cursor: pointer;
+    display: flex;
+    min-width: $min-width - $padding * 2;
+    height: $height - $padding * 2;
+    border-radius: 10px;
+    padding: $padding;
+    background: colors.$dark-25;
+    .like-button__container {
+        $container-min-width: $min-width - $padding * 2;
+        $container-height: $height - $padding * 2;
+        display: inline-flex;
+        min-width: $container-min-width;
+        height: $container-height;
+        border-radius: 10px - $padding;
+        background: #FFFFFF;
+        .like-button__heart {
+            width: $container-height; min-width: $container-height;
+            // Image
+            background-image: url("../common/form/icons/heart-empty.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .like-button__counter {
+            user-select: none;
+            // Display
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 10px + $padding * 2;
+            margin-right: $container-height / 3;
+            // Font
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 12px;
+            // Color
+            color: colors.$dark-25;
+        }
+    }
+    // Selected
+    &.selected {
+        background: colors.$purple-gradient;
+        .like-button__container {
+            .like-button__heart {
+                // Image
+                background-image: url("../common/form/icons/heart.svg");
+            }
+            .like-button__counter {
+                color: colors.$purple;
+            }
+        }
+    }
+}
+// Indent control for group
+.row > .like-button { margin-left: 10px; }
+.column > .like-button { margin-top: 10px; }
