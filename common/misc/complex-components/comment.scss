@@ -1,0 +1,43 @@
+@use "../../utils/flex_.scss" as flex;
+@use "../../colors_.scss" as colors;
+
+// Constants
+$avatar-size: 48px;
+$avatar-border: 2px;
+
+&.comment {
+    .comment__title {
+        display: flex;
+        flex-direction: row;
+        .comment__title__avatar-wrapper {
+            width: $avatar-size;
+            height: $avatar-size;
+            border: $avatar-border solid white;
+            border-radius: $avatar-size / 2;
+            box-sizing: border-box;
+            box-shadow: 0px 10px 20px colors.$dark-10;
+            overflow: hidden;
+            .comment__title__avatar {
+                width: inherit; height: inherit;
+                transform: translate(-$avatar-border, -$avatar-border);
+            }
+        }
+        /* There should be a .description element */
+    }
+    .comment__content {
+        display: flex;
+        flex-direction: row;
+        margin-top: 12px;
+        /* It's a .like-button element container */
+        .comment__content__like-button {
+            width: $avatar-size; min-width: $avatar-size;
+            display: flex;
+            justify-content: center;
+            /* There should be a .like-button element */
+        }
+        .comment__content__text {
+            margin-left: 10px;
+            span { color: colors.$dark-75; }
+        }
+    }
+}

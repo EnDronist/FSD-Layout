@@ -1,0 +1,6 @@
+@use "../../colors_.scss" as colors;
+
+&.strip {
+    height: 1px;
+    background: colors.$dark-10;
+}

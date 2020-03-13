@@ -3,6 +3,9 @@
 .input-group {
     width: inherit;
     margin-top: 16px;
+    &.no-indent {
+        margin-top: 0;
+    }
 }
 // Marginal elements indent control
 .row {

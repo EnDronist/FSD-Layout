@@ -1,0 +1,14 @@
+@use "../../colors_.scss" as colors;
+@use "../../fonts_.scss" as fonts;
+@use "../index_.scss" as index;
+
+// Constants
+$icon-size: 48px;
+
+&.big-icon {
+    width: $icon-size; min-width: $icon-size;
+    height: $icon-size;
+    font-size: $icon-size;
+    @include fonts.icon;
+    @include fonts.gradiented(colors.$purple-gradient);
+}

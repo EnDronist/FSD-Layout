@@ -1,5 +1,6 @@
 @use "index_.scss" as index;
 @use "../../colors_.scss" as colors;
+@use "../../fonts_.scss" as fonts;
 
 // Constants
 $width: 100px;
@@ -7,7 +8,7 @@ $submit-width: index.$width-large;
 $height: 44px;
 $border-size: 2px;
 
-.button {
+&.button {
     /// Default
     cursor: pointer;
     // Display
@@ -20,13 +21,10 @@ $border-size: 2px;
     border-radius: min($width, $height) / 2;
     background: colors.$purple-gradient;
     // Label
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: white;
+    &, span {
+        @include fonts.label;
+        color: white;
+    }
     /// Disabled
     &.disabled {
         cursor: default;
@@ -76,8 +74,8 @@ $border-size: 2px;
             align-items: center;
         }
         .button__icon {
-            @include icon;
-            @include clickable;
+            @include fonts.icon;
+            cursor: pointer;
             float: right;
             width: $height;
             height: $height;
@@ -86,6 +84,3 @@ $border-size: 2px;
         }
     }
 }
-// Indent control for group
-.row > .button { margin-left: 20px; }
-.column > .button { margin-top: 20px; }

@@ -1,0 +1,24 @@
+@use "../../colors_.scss" as colors;
+@use "../../fonts_.scss" as fonts;
+
+// Constants
+$margin-left: 10px;
+
+&.description {
+    // Display
+    display: flex;
+    flex-direction: column;
+    margin-left: $margin-left;
+    // Color
+    color: colors.$dark-75;
+    .description__title {
+        @include fonts.title;
+        height: $icon-size / 2;
+        line-height: $icon-size / 2;
+    }
+    .description__details {
+        @include fonts.default;
+        height: $icon-size / 2;
+        line-height: $icon-size / 2;
+    }
+}

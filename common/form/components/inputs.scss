@@ -1,24 +1,11 @@
 @use "../../colors_.scss" as colors;
-
-// Inputs (input, select/dropdown, input-submit)
-@mixin input-common {
-    height: 44px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    padding-left: 15px;
-    // Font
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    // Colors
-    background: #FFFFFF;
-}
+@use "../../fonts_.scss" as fonts;
+@use "inputs_.scss" as this;
+@use "index_.scss" as index;
 
 // Input with default type (input)
-input {
-    @include input-common;
+&.input {
+    @include this.input-common;
     &.default {
         border: 1px solid colors.$dark-25;
         // Font
@@ -40,47 +27,12 @@ input {
     }
 }
 
-// Custom inputs (select/dropdown, input-submit)
-.custom-input {
-    @include input-common;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    // Colors
-    border: 1px solid colors.$dark-25;
-    color: colors.$dark-75;
-    span {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        &.placeholder {
-            color: colors.$dark-25;
-        }
-    }
-    .icon {
-        width: 44px; min-width: 44px;
-        height: inherit;
-        // Font
-        font-size: 24px;
-        line-height: 24px;
-    }
-}
-
-// Dropdown
-.dropdown {
-    .icon {
-        @include icon;
-        @include clickable;
-        // Colors
-        color: colors.$dark-50;
-    }
-}
-
 // Input submit
-.input-submit {
+&.input-submit {
+    @include this.custom-input;
     .icon {
-        @include icon;
-        @include clickable;
+        @include fonts.icon;
+        cursor: pointer;
         // Colors
         background: colors.$purple-gradient;
         background-clip: text;
@@ -88,3 +40,6 @@ input {
         -webkit-text-fill-color: transparent;
     }
 }
+
+// Dropdown
+@import "dropdown/dropdown.scss";

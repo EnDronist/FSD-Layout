@@ -1,8 +1,11 @@
 // Main variables
 @use "index_.scss" as index;
-@use "components/article/article_.scss" as article;
+@use "components/article/sections/sections_.scss" as sections;
 
-/* Colors & Type */
+// Util styles
+@import "../common/utils/clickable.scss";
+
+/* Form Elements */
 html, body {
     margin: 0;
     padding: 0;
@@ -25,13 +28,19 @@ main {
         margin-right: calc((100% - #{index.$max_width}) / 2);
     }
     // High resolution
-    @media (min-width: article.$resolution-threshold) {
+    @media (min-width: sections.$resolution-threshold) {
         margin-bottom: 132px;
     }
     // Low resolution
-    @media (max-width: article.$resolution-threshold - 1) {
+    @media (max-width: sections.$resolution-threshold - 1) {
         margin-bottom: 40px;
     }
 }
+// Fonts
+@import "../common/fonts.scss";
+// Styles
+@import "../common/form/components/index.scss"; // Form
+@import "../common/misc/index.scss"; // Misc
+// Components
 @import "components/header/header.scss";
 @import "components/article/article.scss";

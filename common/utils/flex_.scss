@@ -1,0 +1,6 @@
+// Sets element's content position to center
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

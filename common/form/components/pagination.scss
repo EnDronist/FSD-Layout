@@ -1,10 +1,12 @@
 @use "../../colors_.scss" as colors;
+@use "../../fonts_.scss" as fonts;
+@use "index_.scss" as index;
 
 // Constants
 $size: 40px;
 $icon-size: 24px;
 
-.pagination {
+&.pagination {
     .pagination__buttons {
         user-select: none;
         .pagination__button {
@@ -16,11 +18,7 @@ $icon-size: 24px;
             width: $size;
             height: $size;
             // Label
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
+            @include fonts.label;
             color: colors.$dark-50;
             &.active {
                 border-radius: $size / 2;
@@ -28,8 +26,8 @@ $icon-size: 24px;
                 color: white;
             }
             &.next {
-                @include icon;
-                @include clickable;
+                @include fonts.icon;
+                cursor: pointer;
                 border-radius: $size / 2;
                 background: colors.$green-gradient;
                 color: white;
@@ -53,6 +51,3 @@ $icon-size: 24px;
         color: colors.$dark-75;
     }
 }
-// Indent control for group
-.row > .pagination { margin-left: 20px; }
-.column > .pagination { margin-top: 20px; }

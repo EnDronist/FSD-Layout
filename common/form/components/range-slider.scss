@@ -1,4 +1,5 @@
 @use "../../colors_.scss" as colors;
+@use "index_.scss" as index;
 
 // Constants
 $working-height: 16px;
@@ -10,7 +11,7 @@ $point-border: 2px;
 $start: 30%;
 $end: 64%;
 
-.range-slider {
+&.range-slider {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +65,3 @@ $end: 64%;
         }
     }
 }
-// Indent control for group
-.row > .range-slider { margin-left: 20px; }
-.column > .range-slider { margin-top: 20px; }

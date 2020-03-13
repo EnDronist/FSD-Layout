@@ -1,12 +1,15 @@
 @use "../../colors_.scss" as colors;
+@use "index_.scss" as index;
+@use "../../fonts_.scss" as fonts;
 
 // Constants
 $button-size: 20px;
 $check-mark-size: 10px;
 
-.checkbox {
+&.checkbox {
     // Default
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     .checkbox__icon {
         width: $button-size; min-width: $button-size;
         height: $button-size; min-height: $button-size;
@@ -19,8 +22,6 @@ $check-mark-size: 10px;
     .checkbox__description {
         margin-left: 10px;
         margin-top: 1px;
-        font-size: 14px;
-        line-height: 18px;
         color: colors.$dark-50;
     }
     // Selected
@@ -34,7 +35,17 @@ $check-mark-size: 10px;
             background-position: center calc(50% - 1px);
         }
     }
+    // Extended version
+    &.extended {
+        .checkbox__description {
+            display: flex;
+            flex-direction: column;
+            .checkbox__description__title {
+                @include fonts.title;
+                line-height: $button-size;
+                color: colors.$dark-75;
+            }
+            /* .checkbox__description__details using default span style */
+        }
+    }
 }
-// Indent control for group
-.row > .checkbox { margin-left: 20px; }
-.column > .checkbox { margin-top: 10px; }

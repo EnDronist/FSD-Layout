@@ -1,87 +1,24 @@
 @use "../../index_.scss" as index;
-@use "../../../common/form/components/index_.scss" as form;
-@use "article_.scss" as this;
+@use "sections/sections_.scss" as sections;
+@use "../../../common/utils/margin_.scss" as margin;
 
 article {
-    // Styles
-    @import "../../../common/form/components/index.scss";
     // Display
     display: flex;
     margin-top: 32px;
     // High resolution
-    @media (min-width: this.$resolution-threshold) {
-        width: calc(100% - #{this.$article-h-margin * 2});
-        margin-left: this.$article-h-margin;
-        margin-right: this.$article-h-margin;
+    @media (min-width: sections.$resolution-threshold) {
+        width: calc(100% - #{sections.$article-h-margin * 2});
+        margin-left: sections.$article-h-margin;
+        margin-right: sections.$article-h-margin;
     }
     // Low resolution
-    @media (max-width: this.$resolution-threshold - 1) {
+    @media (max-width: sections.$resolution-threshold - 1) {
         width: 100%;
         margin-left: 0px;
         margin-right: 0px;
     }
     // Sections positioning
     flex-direction: column;
-    section {
-        display: flex;
-        background-color: rgb(254, 255, 245);
-        // High resolution
-        @media (min-width: this.$resolution-threshold) {
-            flex-direction: row;
-        }
-        // Low resolution
-        @media (max-width: this.$resolution-threshold - 1) {
-            flex-direction: column;
-        }
-        .section-column {
-            width: 320px;
-            margin-right: 0px;
-            background-color: rgb(255, 243, 243);
-            font-family: Montserrat;
-            font-style: normal;
-            // High resolution
-            @media (min-width: this.$resolution-threshold) {
-                &.first { margin-left: calc((100% - #{this.$column-width * 3}) * #{this.$margin-first}); }
-                &.second { margin-left: calc((100% - #{this.$column-width * 3}) * #{this.$margin-second}); }
-                &.third { margin-left: calc((100% - #{this.$column-width * 3}) * #{this.$margin-third}); }
-            }
-            // Low resolution
-            @media (max-width: this.$resolution-threshold - 1) {
-                margin-left: calc(50% - #{this.$column-width / 2});
-                margin-right: calc(50% - #{this.$column-width / 2});
-                // Sections indent when all in one column
-                margin-top: form.$indent-large;
-                &:first-child { margin-top: 0; }
-                &:last-child { margin-bottom: 0; }
-            }
-            // First section element doesn't need top margin
-            & > *:first-child { margin-top: 0; }
-            // Last section element doesn't need bottom margin
-            & > *:last-child { margin-bottom: 0; }
-            .form-group {
-                display: flex;
-                flex-direction: column;
-                .form-group__description {
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: space-between;
-                    font-size: 12px;
-                    line-height: 15px;
-                    text-transform: uppercase;
-                    label {
-                        font-weight: bold;
-                        color: index.$dark-100;
-                        &.indent {
-                            margin-top: 3px;
-                            margin-bottom: 5px;
-                        }
-                    }
-                    span {
-                        font-weight: normal;
-                        color: index.$dark-50;
-                    }
-                }
-            }
-        }
-    }
+    @import "sections/sections.scss";
 }

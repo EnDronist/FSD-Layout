@@ -1,0 +1,35 @@
+@use "../../../../colors_.scss" as colors;
+@use "../../../../fonts_.scss" as fonts;
+@use "../../../fonts_.scss" as fonts-form;
+
+$height: 40px;
+$padding-left: 14px;
+$padding-right: 7px;
+
+// Submit panel
+&.submit-panel {
+    width: 100%;
+    height: $height;
+    // Display
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+    box-sizing: border-box;
+    .submit-panel__button-clear {
+        @include fonts.label;
+        @include fonts.inline;
+        cursor: pointer;
+        margin-top: 7px;
+        color: colors.$dark-50;
+    }
+    .submit-panel__button-submit {
+        @include fonts.label;
+        @include fonts.inline;
+        cursor: pointer;
+        margin-left: auto;
+        margin-top: 7px;
+        color: colors.$purple;
+    }
+}

@@ -1,41 +1,53 @@
 @use "../../colors_.scss" as colors;
+@use "index_.scss" as index;
+@use "../../fonts_.scss" as fonts;
+@use "../../utils/flex_.scss" as flex;
 
 // Constants
 $width: 40px;
 $height: 20px;
 $point-size: 12px;
 
-.toogle {
+&.toogle {
     // Default
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     .toogle__icon {
+        // Display
+        @include flex.center;
+        // Size
         width: $width; min-width: $width;
         height: $height; min-height: $height;
         border: 1px solid colors.$dark-25;
-        box-sizing: border-box;
         border-radius: $height / 2;
-        background-color: white;
-        background-image: url("../common/form/icons/point-inactive.svg");
-        background-size: $point-size $point-size;
-        background-repeat: no-repeat;
-        background-position: left #{($height - 2 /* border */ - $point-size) / 2} center;
+        box-sizing: border-box;
+        // Color
+        background: white;
+        // Icon
+        .toogle__icon__point {
+            width: $point-size;
+            height: $point-size;
+            border-radius: $point-size / 2;
+            margin-left: ($height - 2 /* border */ - $point-size) / 2;
+            margin-right: auto;
+            background: colors.$dark-25;
+        }
     }
     .toogle__description {
         margin-left: 10px;
         margin-top: 1px;
-        font-size: 14px;
-        line-height: 18px;
         color: colors.$dark-75;
     }
     // Selected
     &.selected {
         .toogle__icon {
-            border: 1px solid #BC9CFF;
-            background-image: url("../common/form/icons/point.svg");
-            background-position: right #{($height - 2 /* border */ - $point-size) / 2} center;
+            border: 1px solid colors.$purple;
+            // Icon
+            .toogle__icon__point {
+                margin-left: auto;
+                margin-right: ($height - 2 /* border */ - $point-size) / 2;
+                background: colors.$purple-gradient;
+            }
         }
     }
 }
-// Indent control for group
-.row > .toogle { margin-left: 20px; }
-.column > .toogle { margin-top: 14px; }

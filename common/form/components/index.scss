@@ -2,18 +2,42 @@
 
 /// Form Groups
 /* Insert here any new element */
-@import "icon.scss";
-@import "inputs.scss";
-@import "checkbox.scss";
-@import "radiobutton.scss";
-@import "toogle.scss";
-@import "like-button.scss";
-@import "rate-button.scss";
-@import "range-slider.scss";
-@import "button.scss";
-@import "pagination.scss";
+.#{this.$keyword-class} {
+    @import "inputs.scss";
+    @import "checkbox.scss";
+    @import "radiobutton.scss";
+    @import "toogle.scss";
+    @import "like-button.scss";
+    @import "rate-button.scss";
+    @import "range-slider.scss";
+    @import "button.scss";
+    @import "pagination.scss";
+}
 // Final import
 @import "input-group.scss";
+
+/// Group indents
+/* Insert here any new element's indent, then may be grouped */
+.row {
+    > .#{this.$keyword-class}.checkbox { margin-left: 20px; &:first-child { margin-left: 0; } }
+    > .#{this.$keyword-class}.radiobutton { margin-left: 20px; &:first-child { margin-left: 0; } }
+    > .#{this.$keyword-class}.toogle { margin-left: 20px; &:first-child { margin-left: 0; } }
+    > .#{this.$keyword-class}.like-button { margin-left: 10px; &:first-child { margin-left: 0; } }
+    > .#{this.$keyword-class}.rate-button { margin-left: 20px; &:first-child { margin-left: 0; } }
+    > .#{this.$keyword-class}.range-slider { margin-left: 20px; &:first-child { margin-left: 0; } }
+    > .#{this.$keyword-class}.button { margin-left: 20px; &:first-child { margin-left: 0; } }
+}
+.column {
+    > .#{this.$keyword-class}.checkbox { margin-top: 10px; &:first-child { margin-top: 0; } }
+    > .#{this.$keyword-class}.radiobutton { margin-top: 10px; &:first-child { margin-top: 0; } }
+    > .#{this.$keyword-class}.toogle { margin-top: 14px; &:first-child { margin-top: 0; } }
+    > .#{this.$keyword-class}.like-button { margin-top: 10px; &:first-child { margin-top: 0; } }
+    > .#{this.$keyword-class}.rate-button { margin-top: 20px; &:first-child { margin-top: 0; } }
+    > .#{this.$keyword-class}.range-slider { margin-top: 20px; &:first-child { margin-top: 0; } }
+    > .#{this.$keyword-class}.button { margin-top: 20px; &:first-child { margin-top: 0; } }
+}
+
+
 
 /// Additional classes
 // Form-group width
@@ -26,3 +50,4 @@
 .indent-small { margin-top: this.$indent-small; }
 .indent-medium { margin-top: this.$indent-medium; }
 .indent-large { margin-top: this.$indent-large; }
+.indent-significant { margin-top: this.$indent-significant; }

@@ -1,0 +1,9 @@
+@use "../index_.scss" as index;
+
+/* Insert here any new element */
+.#{index.$keyword-class} {
+    @import "list.scss";
+    @import "big-icon.scss";
+    @import "description.scss";
+    @import "strip.scss";
+}

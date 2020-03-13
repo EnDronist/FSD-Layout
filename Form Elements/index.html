@@ -8,7 +8,7 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -20,25 +20,25 @@
     <section class="top">
     <div class="section-column first">
     <!-- text_field_default -->
-    <div class="form-group width-large indent-large">
-        <div class="form-group__description">
-            <label for="text_field_default" class="indent">Text Field</label>
+    <div class="element-group width-large indent-large">
+        <div class="element-group__description">
+            <label for="text_field_default">Text Field</label>
             <span>Default</span>
         </div>
-        <input id="text_field_default" class="default" placeholder="Email">
+        <input id="text_field_default" class="form-element input default" placeholder="Email">
     </div>
     <!-- text_field_hover_focus -->
-    <div class="form-group width-large indent-small">
-        <div class="form-group__description">
-            <label for="text_field_hover_focus" class="indent">Text Field</label>
+    <div class="element-group width-large indent-small">
+        <div class="element-group__description">
+            <label for="text_field_hover_focus">Text Field</label>
             <span>Hover / Focus</span>
         </div>
-        <input id="text_field_hover_focus" class="hover-focus" placeholder="Email">
+        <input id="text_field_hover_focus" class="form-element input hover-focus" placeholder="Email">
     </div>
     <!-- dropdown -->
-    <div class="form-group width-large indent-small">
-        <div class="form-group__description">
-            <label for="dropdown" class="indent">Text Field</label>
+    <div class="element-group width-large indent-small">
+        <div class="element-group__description">
+            <label for="dropdown">Dropdown</label>
             <span>Default</span>
         </div>
         <!-- <select id="dropdown">
@@ -47,58 +47,66 @@
             <option value="1">Second</option>
             <option value="2">Third</option>
         </select> -->
-        <div id="dropdown" class="custom-input dropdown">
-            <span>Сколько гостей</span>
-            <div class="icon clickable">expand_more</div>
+        <div id="dropdown" class="form-element dropdown">
+            <div class="dropdown__field">
+                <span>Сколько гостей</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
         </div>
     </div>
     <!-- masked_text_field -->
-    <div class="form-group width-large indent-small">
-        <div class="form-group__description">
-            <label for="masked_text_field" class="indent">Masked Text Field</label>
+    <div class="element-group width-large indent-small">
+        <div class="element-group__description">
+            <label for="masked_text_field">Masked Text Field</label>
             <span>Default</span>
         </div>
-        <input id="masked_text_field" class="default" placeholder="ДД.ММ.ГГГГ">
+        <input id="masked_text_field" class="form-element input default" placeholder="ДД.ММ.ГГГГ">
     </div>
     <!-- date_dropdowns -->
     <div class="row-extend indent-large">
         <!-- date_dropdown_left -->
-        <div class="form-group width-tiny">
-            <div class="form-group__description">
-                <label for="date_dropdown_left" class="indent">Date Dropdown</label>
+        <div class="element-group width-tiny">
+            <div class="element-group__description">
+                <label for="date_dropdown_left">Date Dropdown</label>
             </div>
-            <div id="date_dropdown_left" class="custom-input dropdown">
-                <span>ДД.ММ.ГГГГ</span>
-                <div class="icon clickable">expand_more</div>
+            <div id="date_dropdown_left" class="form-element dropdown">
+                <div class="dropdown__field">
+                    <span>ДД.ММ.ГГГГ</span>
+                    <div class="icon clickable">expand_more</div>
+                </div>
             </div>
         </div>
         <!-- date_dropdown_right -->
-        <div class="form-group width-tiny">
-            <div class="form-group__description">
-                <label for="date_dropdown_right" class="indent">Date Dropdown</label>
+        <div class="element-group width-tiny">
+            <div class="element-group__description">
+                <label for="date_dropdown_right">Date Dropdown</label>
             </div>
-            <div id="date_dropdown_right" class="custom-input dropdown">
-                <span>19.08.2019</span>
+            <div id="date_dropdown_right" class="form-element dropdown">
+                <div class="dropdown__field">
+                    <span>19.08.2019</span>
+                    <div class="icon clickable">expand_more</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- filter_date_dropdown -->
+    <div class="element-group width-medium indent-large">
+        <div class="element-group__description">
+            <label for="filter_date_dropdown">Filter Date Dropdown</label>
+        </div>
+        <div id="filter_date_dropdown" class="form-element dropdown">
+            <div class="dropdown__field">
+                <span>19 авг - 23 авг</span>
                 <div class="icon clickable">expand_more</div>
             </div>
         </div>
     </div>
     <!-- filter_date_dropdown -->
-    <div class="form-group width-medium indent-large">
-        <div class="form-group__description">
-            <label for="filter_date_dropdown" class="indent">Filter Date Dropdown</label>
+    <div class="element-group width-medium indent-large">
+        <div class="element-group__description">
+            <label for="filter_date_dropdown">Subscription Text Field</label>
         </div>
-        <div id="filter_date_dropdown" class="custom-input dropdown">
-            <span>19 авг - 23 авг</span>
-            <div class="icon clickable">expand_more</div>
-        </div>
-    </div>
-    <!-- filter_date_dropdown -->
-    <div class="form-group width-medium indent-large">
-        <div class="form-group__description">
-            <label for="filter_date_dropdown" class="indent">Subscription Text Field</label>
-        </div>
-        <div id="filter_date_dropdown" class="custom-input input-submit">
+        <div id="filter_date_dropdown" class="form-element input-submit">
             <span class="placeholder">Email</span>
             <div class="icon clickable">arrow_forward</div>
         </div>
@@ -106,115 +114,143 @@
 </div>
     <div class="section-column second">
     <!-- checkbox_buttons -->
-    <div class="form-group width-medium indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-medium indent-large">
+        <div class="element-group__description">
             <label for="checkbox_buttons">Checkbox Buttons</label>
         </div>
         <div id="checkbox_buttons" class="input-group column">
-            <div class="checkbox">
-                <div class="checkbox__icon icon clickable"></div>
+            <div class="form-element checkbox">
+                <div class="checkbox__icon clickable"></div>
                 <span class="checkbox__description">Можно курить</span>
             </div>
-            <div class="checkbox selected">
-                <div class="checkbox__icon icon clickable"></div>
+            <div class="form-element checkbox selected">
+                <div class="checkbox__icon clickable"></div>
                 <span class="checkbox__description">Можно с питомцами</span>
             </div>
-            <div class="checkbox selected">
-                <div class="checkbox__icon icon clickable"></div>
+            <div class="form-element checkbox selected">
+                <div class="checkbox__icon clickable"></div>
                 <span class="checkbox__description">Можно пригласить гостей<br>(до 10 человек)</span>
             </div>
         </div>
     </div>
     <!-- radio_buttons -->
-    <div class="form-group width-medium indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-medium indent-large">
+        <div class="element-group__description">
             <label for="radio_buttons">Radio Buttons</label>
         </div>
         <div id="radio_buttons" class="input-group row">
-            <div class="radiobutton selected">
-                <div class="radiobutton__icon icon clickable"></div>
+            <div class="form-element radiobutton selected">
+                <div class="radiobutton__icon clickable">
+                    <div class="radiobutton__icon__point"></div>
+                </div>
                 <span class="radiobutton__description">Мужчина</span>
             </div>
-            <div class="radiobutton">
-                <div class="radiobutton__icon icon clickable"></div>
+            <div class="form-element radiobutton">
+                <div class="radiobutton__icon clickable">
+                    <div class="radiobutton__icon__point"></div>
+                </div>
                 <span class="radiobutton__description">Женщина</span>
             </div>
         </div>
     </div>
     <!-- toogles -->
-    <div class="form-group width-medium indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-medium indent-large">
+        <div class="element-group__description">
             <label for="toogles">Toogle</label>
         </div>
         <div id="toogles" class="input-group column">
-            <div class="toogle selected">
-                <div class="toogle__icon icon clickable"></div>
+            <div class="form-element toogle selected">
+                <div class="toogle__icon clickable">
+                    <div class="toogle__icon__point"></div>
+                </div>
                 <span class="toogle__description">Получать спецпредложения</span>
             </div>
-            <div class="toogle">
-                <div class="toogle__icon icon clickable"></div>
+            <div class="form-element toogle">
+                <div class="toogle__icon clickable">
+                    <div class="toogle__icon__point"></div>
+                </div>
                 <span class="toogle__description">Получать спецпредложения</span>
             </div>
         </div>
     </div>
     <!-- like_buttons -->
-    <div class="form-group width-tiny indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-tiny indent-large">
+        <div class="element-group__description">
             <label for="like_buttons">Like Button</label>
         </div>
         <div id="like_buttons" class="input-group row">
-            <div class="like-button">
+            <div class="form-element like-button">
                 <div class="like-button__container">
-                    <div class="like-button__heart icon clickable"></div>
+                    <div class="like-button__heart clickable">favorite_border</div>
                     <div class="like-button__counter">2</div>
                 </div>
             </div>
-            <div class="like-button selected">
+            <div class="form-element like-button selected">
                 <div class="like-button__container">
-                    <div class="like-button__heart icon clickable"></div>
+                    <div class="like-button__heart clickable">favorite</div>
                     <div class="like-button__counter">12</div>
                 </div>
             </div>
-            <div class="like-button selected">
+            <div class="form-element like-button selected">
                 <div class="like-button__container">
-                    <div class="like-button__heart icon clickable"></div>
+                    <div class="like-button__heart clickable">favorite</div>
                     <div class="like-button__counter">1234</div>
                 </div>
             </div>
         </div>
     </div>
     <!-- rate_buttons -->
-    <div class="form-group width-medium indent-large row">
-        <div class="form-group__description">
+    <div class="element-group width-medium indent-large row">
+        <div class="element-group__description">
             <label for="rate_buttons">Rate Button</label>
         </div>
         <div id="rate_buttons" class="input-group row">
-            <div class="rate-button row">
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element"></div>
+            <div class="form-element rate-button row">
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element">
+                    <span class="icon">star_border</span>
+                </div>
             </div>
-            <div class="rate-button row">
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
-                <div class="rate-button__element selected"></div>
+            <div class="form-element rate-button row">
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
+                <div class="rate-button__element selected">
+                    <span class="icon">star</span>
+                </div>
             </div>
         </div>
     </div>
 </div>
     <div class="section-column third">
     <!-- range_slider -->
-    <div class="form-group width-medium indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-medium indent-large">
+        <div class="element-group__description">
             <label for="range_slider">Range Slider</label>
             <span>5 000₽ - 10 000₽</span>
         </div>
         <div id="range_slider" class="input-group column">
-            <div class="range-slider">
+            <div class="form-element range-slider">
                 <div class="range-slider__full-bar">
                     <div class="range-slider__active-bar-wrapper">
                         <div class="range-slider__active-bar">
@@ -229,42 +265,42 @@
         </div>
     </div>
     <!-- buttons -->
-    <div class="form-group width-large indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-large indent-large">
+        <div class="element-group__description">
             <label for="buttons">Buttons</label>
         </div>
         <div id="buttons" class="input-group column">
             <div class="row">
-                <div class="button">Click Me</div>
-                <div class="button disabled">Click Me</div>
+                <div class="form-element button">Click Me</div>
+                <div class="form-element button disabled">Click Me</div>
             </div>
             <div class="row indent-medium">
-                <div class="button bordered">
+                <div class="form-element button bordered">
                     <div class="button__container">Click Me</div>
                 </div>
-                <div class="button bordered disabled">
+                <div class="form-element button bordered disabled">
                     <div class="button__container">Click Me</div>
                 </div>
             </div>
             <div class="row indent-medium">
-                <div class="button inline">Click Me</div>
-                <div class="button inline disabled">Click Me</div>
+                <div class="form-element button inline">Click Me</div>
+                <div class="form-element button inline disabled">Click Me</div>
             </div>
             <div class="row indent-medium">
-                <div class="button submit">
+                <div class="form-element button submit">
                     <span>Перейти к оплате</span>
-                    <div class="button__icon icon clickable">arrow_forward</div>
+                    <div class="button__icon clickable">arrow_forward</div>
                 </div>
             </div>
         </div>
     </div>
     <!-- pagination -->
-    <div class="form-group width-large indent-large">
-        <div class="form-group__description">
+    <div class="element-group width-large indent-large">
+        <div class="element-group__description">
             <label for="pagination">Pagination</label>
         </div>
         <div id="pagination" class="input-group row">
-            <div class="pagination column">
+            <div class="form-element pagination column">
                 <div class="pagination__buttons row">
                     <div class="pagination__button active">1</div>
                     <div class="pagination__button">2</div>
@@ -276,6 +312,354 @@
                 <div class="pagination__afterword indent-tiny">1 – 12 из 100+ вариантов аренды</div>
             </div>
         </div>
+    </div>
+</div>
+</section>
+<section class="center">
+    <div class="section-column first">
+    <!-- dropdown_default -->
+    <div class="element-group width-medium indent-small">
+        <div class="element-group__description">
+            <label for="dropdown_default" class="indent">Dropdown</label>
+            <span>Default</span>
+        </div>
+        <div id="dropdown_default" class="form-element dropdown angular">
+            <div class="dropdown__field">
+                <span>2 спальни, 2 кровати...</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
+        </div>
+    </div>
+    <!-- dropdown_expanded -->
+    <div class="element-group width-medium indent-small">
+        <div class="element-group__description">
+            <label for="dropdown_expanded">Dropdown</label>
+            <span>Expanded</span>
+        </div>
+        <div id="dropdown_expanded" class="form-element dropdown angular expanded">
+            <div class="dropdown__field">
+                <span>2 спальни, 2 кровати...</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
+            <div class="dropdown__list">
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Cпальни</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>2</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Кровати</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>2</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Ванные комнаты</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button disabled">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>0</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- checkbox_list_default -->
+    <div class="element-group expandable width-large indent-small">
+        <div class="element-group__description">
+            <label>Expandable checkbox list</label>
+            <div class="icon clickable">expand_more</div>
+        </div>
+    </div>
+    <!-- checkbox_list_expanded -->
+    <div class="element-group expandable expanded width-large indent-small">
+        <div class="element-group__description">
+            <label for="checkbox_list_expanded">Expandable checkbox list</label>
+            <div class="icon clickable">expand_more</div>
+        </div>
+        <div class="element-group__content">
+            <!-- input-group -->
+            <div id="checkbox_list_expanded" class="input-group column no-indent">
+                <div class="form-element checkbox">
+                    <div class="checkbox__icon clickable"></div>
+                    <span class="checkbox__description">Завтрак</span>
+                </div>
+                <div class="form-element checkbox selected">
+                    <div class="checkbox__icon clickable"></div>
+                    <span class="checkbox__description">Письменный стол</span>
+                </div>
+                <div class="form-element checkbox selected">
+                    <div class="checkbox__icon clickable"></div>
+                    <span class="checkbox__description">Стул для кормления</span>
+                </div>
+                <div class="form-element checkbox selected">
+                    <div class="checkbox__icon clickable"></div>
+                    <span class="checkbox__description">Кроватка</span>
+                </div>
+                <div class="form-element checkbox">
+                    <div class="checkbox__icon clickable"></div>
+                    <span class="checkbox__description">Телевизор</span>
+                </div>
+                <div class="form-element checkbox">
+                    <div class="checkbox__icon clickable"></div>
+                    <span class="checkbox__description">Шампунь</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="section-column second">
+    <!-- dropdown_only_submit -->
+    <div class="element-group width-large indent-small">
+        <div class="element-group__description">
+            <label for="dropdown_only_submit">Dropdown</label>
+        </div>
+        <div id="dropdown_only_submit" class="form-element dropdown angular expanded">
+            <div class="dropdown__field">
+                <span>Сколько гостей</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
+            <div class="dropdown__list">
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Взрослые</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button disabled">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>0</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Дети</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button disabled">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>0</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Младенцы</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button disabled">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>0</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element submit-panel">
+                    <div class="submit-panel__button-submit">Применить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- rich_checkbox_buttons -->
+    <div class="element-group width-medium indent-significant">
+        <div class="element-group__description">
+            <label for="rich_checkbox_buttons">Rich Checkbox Buttons</label>
+        </div>
+        <div id="rich_checkbox_buttons" class="input-group column">
+            <div class="form-element checkbox extended">
+                <div class="checkbox__icon clickable"></div>
+                <div class="checkbox__description">
+                    <div class="checkbox__description__title">Широкий коридор</div>
+                    <div class="checkbox__description__details">Ширина коридоров в номере не менее 91 см.</div>
+                </div>
+            </div>
+            <div class="form-element checkbox extended">
+                <div class="checkbox__icon clickable"></div>
+                <span class="checkbox__description">
+                    <div class="checkbox__description__title">Помощник для инвалидов</div>
+                    <div class="checkbox__description__details">На 1 этаже вас встретит специалист и проводит до номера.</div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="section-column third">
+    <!-- dropdown_clear_submit -->
+    <div class="element-group width-large indent-small">
+        <div class="element-group__description">
+            <label for="dropdown_clear_submit">Dropdown</label>
+        </div>
+        <div id="dropdown_clear_submit" class="form-element dropdown angular expanded">
+            <div class="dropdown__field">
+                <span>3 гостя</span>
+                <div class="icon clickable">expand_more</div>
+            </div>
+            <div class="dropdown__list">
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Взрослые</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>2</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Дети</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>1</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element counter">
+                    <span class="counter__text">Младенцы</span>
+                    <div class="counter__config">
+                        <div class="counter__config__button disabled">
+                            <span>-</span>
+                        </div>
+                        <div class="counter__config__number">
+                            <span>0</span>
+                        </div>
+                        <div class="counter__config__button">
+                            <span>+</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown__list-element submit-panel">
+                    <div class="submit-panel__button-clear">Очистить</div>
+                    <div class="submit-panel__button-submit">Применить</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bullet_list -->
+    <div class="element-group width-medium indent-significant">
+        <div class="element-group__description">
+            <label for="bullet_list">Bullet list</label>
+        </div>
+        <div id="bullet_list" class="input-group column">
+            <div class="misc-element list">
+                <div class="list-element">
+                    <div class="list-element__icon"></div>
+                    <div class="list-element__description">
+                        <span>Нельзя с питомцами</span>
+                    </div>
+                </div>
+                <div class="list-element">
+                    <div class="list-element__icon"></div>
+                    <div class="list-element__description">
+                        <span>Без вечеринок и мероприятий</span>
+                    </div>
+                </div>
+                <div class="list-element">
+                    <div class="list-element__icon"></div>
+                    <div class="list-element__description">
+                        <span>Время прибытия — после 13:00, а выезд до 12:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<section class="bottom">
+    <div class="section-column left">
+    <div class="element-group width-large indent-medium">
+        <!-- described_icon_comfort -->
+        <div class="indent-small row">
+            <div class="misc-element big-icon">insert_emoticon</div>
+            <div class="misc-element description">
+                <div class="description__title">Комфорт</div>
+                <div class="description__details">Шумопоглощающие стены</div>
+            </div>
+        </div>
+        <!-- strip -->
+        <div class="indent-small">
+            <div class="misc-element strip"></div>
+        </div>
+        <!-- described_icon_convenience -->
+        <div class="indent-small row">
+            <div class="misc-element big-icon">location_city</div>
+            <div class="misc-element description">
+                <div class="description__title">Удобство</div>
+                <div class="description__details">Окно в каждой из спален</div>
+            </div>
+        </div>
+        <!-- strip -->
+        <div class="indent-small">
+            <div class="misc-element strip"></div>
+        </div>
+    </div>
+</div>
+    <div class="section-column right">
+    <!-- comment -->
+    <div class="misc-element comment">
+        <div class="comment__title">
+            <div class="comment__title__avatar-wrapper">
+                <img class="comment__title__avatar" src="../common/misc/images/avatar.jpg">
+            </div>
+            <div class="misc-element description">
+                <div class="description__title">Илон Маск</div>
+                <div class="description__details">5 дней назад</div>
+            </div>
+        </div>
+        <div class="comment__content">
+            <div class="comment__content__like-button">
+                <div class="form-element like-button selected">
+                    <div class="like-button__container">
+                        <div class="like-button__heart clickable">favorite</div>
+                        <div class="like-button__counter">12</div>
+                    </div>
+                </div>
+            </div>
+            <div class="comment__content__text">
+                <span>Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</span>
+            </div>
+        </div>
+    </div>
 </div>
 </section>
 </article>

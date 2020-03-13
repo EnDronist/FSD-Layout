@@ -1,0 +1,63 @@
+@use "../../../../colors_.scss" as colors;
+@use "../../../../fonts_.scss" as fonts;
+@use "../../../fonts_.scss" as fonts-form;
+@use "../../../../utils/flex_.scss" as flex;
+
+// Constants
+$height: 38px;
+$padding-left: 15px;
+$padding-right: 7px;
+$button-size: 30px;
+$button-border-size: 1px;
+$button-border-color: colors.$dark-25;
+$button-text-color: colors.$dark-50;
+$number-space: $button-size;
+
+// Counter
+&.counter {
+    width: 100%;
+    height: $height;
+    // Display
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: $padding-left;
+    padding-right: $padding-right;
+    box-sizing: border-box;
+    .counter__text {
+        @include fonts.label;
+        @include fonts.inline;
+    }
+    .counter__config {
+        display: flex;
+        flex-direction: row;
+        .counter__config__button {
+            cursor: pointer;
+            width: $button-size;
+            height: $button-size;
+            // Display
+            @include flex.center;
+            border: $button-border-size solid $button-border-color;
+            border-radius: $button-size / 2;
+            box-sizing: border-box;
+            span {
+                @include fonts-form.dropdown__list-element-config__counter;
+                user-select: none;
+                // Color
+                color: colors.$dark-50;
+            }
+            // Disabled
+            &.disabled {
+                cursor: default;
+                opacity: 0.5;
+            }
+        }
+        .counter__config__number {
+            width: $number-space;
+            height: $button-size;
+            @include flex.center;
+            span { @include fonts.label; }
+        }
+    }
+}

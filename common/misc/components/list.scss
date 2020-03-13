@@ -1,0 +1,30 @@
+@use "../../colors_.scss" as colors;
+@use "../../fonts_.scss" as fonts;
+
+// Constants
+$min-height: 24px;
+$icon-size: 10px;
+$icon-margin-top: 4px;
+
+&.list {
+    display: column;
+    .list-element {
+        min-height: $min-height;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        .list-element__icon {
+            width: $icon-size; min-width: $icon-size;
+            height: $icon-size; min-height: $icon-size;
+            border-radius: $icon-size / 2;
+            margin-top: $icon-margin-top;
+            // Color
+            background: colors.$dark-25;
+        }
+        .list-element__description {
+            display: flex;
+            margin-left: 10px;
+            color: colors.$dark-75;
+        }
+    }
+}

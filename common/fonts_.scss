@@ -1,0 +1,47 @@
+/// Fonts
+@mixin default {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+}
+@mixin label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+@mixin title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+@mixin icon {
+    user-select: none;
+    // Display
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Font
+    font-family: Material Icons;
+    text-transform: none;
+}
+
+/// Font utility mixins
+@mixin inline {
+    // Text overflow
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin gradiented($gradient) {
+    background: $gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

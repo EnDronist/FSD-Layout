@@ -1,0 +1,79 @@
+@use "../../../colors_.scss" as colors;
+@use "../../../fonts_.scss" as fonts;
+@use "../inputs_.scss" as inputs;
+@use "../index_.scss" as index;
+
+// Constants
+$list-element-height: inputs.$height;
+$list-padding: 4px;
+
+// Dropdown
+&.dropdown {
+    width: inherit;
+    // Default
+    .dropdown__field {
+        @include inputs.custom-input;
+        @include fonts.inline;
+        // Display
+        width: 100%;
+        > .icon {
+            @include fonts.icon;
+            cursor: pointer;
+            transition: transform ease 0.3s;
+            // Color
+            color: colors.$dark-50;
+        }
+    }
+    .dropdown__list {
+        // Special
+        display: none;
+        box-sizing: border-box;
+        // Display
+        width: inherit;
+        border: inputs.$border;
+        border-radius: inputs.$border-radius;
+        padding-top: $list-padding;
+        padding-bottom: $list-padding;
+        // Color
+        background: inputs.$background;
+        > .dropdown__list-element {
+            /* Insert here any new list element type */
+            @import "list-elements/counter.scss";
+            @import "list-elements/submit-panel.scss";
+        }
+        // If list is empty
+        &:empty {
+            border: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        // Version with absolute list position
+        &.absolute {
+            position: absolute;
+            z-index: inherit + 1;
+        }
+    }
+    // Angular (not framework) version 
+    &.angular {
+        .dropdown__field {
+            border-radius: inputs.$border-radius inputs.$border-radius 0 0;
+        }
+        .dropdown__list {
+            border-top: 0;
+            border-radius: 0 0 inputs.$border-radius inputs.$border-radius;
+        }
+    }
+    // Expanded
+    &.expanded {
+        .dropdown__field {
+            > .icon {
+                transform: rotate(180deg);
+                transition: transform ease 0.3s;
+            }
+        }
+        .dropdown__list {
+            // Special
+            display: block;
+        }
+    }
+}

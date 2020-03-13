@@ -1,0 +1,7 @@
+@use "fonts_.scss" as this;
+
+/// Fonts
+// Default
+span {
+    @include this.default;
+}

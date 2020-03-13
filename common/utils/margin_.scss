@@ -1,0 +1,15 @@
+// Margin utils
+@mixin inner-horizontal($margin-type: none, $value: 0) {
+    > * {
+        @if $value != 0 { #{$margin-type}: $value; }
+        &:first-child { margin-left: 0; }
+        &:last-child { margin-right: 0; }
+    }
+}
+@mixin inner-vertical($margin-type: none, $value: 0) {
+    > * {
+        @if $value != 0 { #{$margin-type}: $value; }
+        &:first-child { margin-top: 0; }
+        &:last-child { margin-bottom: 0; }
+    }
+}

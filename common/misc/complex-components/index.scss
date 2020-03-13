@@ -1,0 +1,6 @@
+@use "../index_.scss" as index;
+
+/* Insert here any new element */
+.#{index.$keyword-class} {
+    @import "comment.scss";
+}

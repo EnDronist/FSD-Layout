@@ -1,0 +1,60 @@
+@use "colors_.scss" as colors;
+@use "fonts_.scss" as fonts;
+
+.element-group {
+    display: flex;
+    flex-direction: column;
+    .element-group__description {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        @include fonts.label;
+        label {
+            font-weight: bold;
+            color: colors.$dark-100;
+            &.indent {
+                margin-top: 3px;
+                margin-bottom: 5px;
+            }
+        }
+        span {
+            font-weight: normal;
+            color: colors.$dark-50;
+        }
+    }
+    /// Enpandable version
+    &.expandable {
+        /// Default
+        .element-group__description {
+            label {
+                align-self: center;
+            }
+            .icon {
+                @include fonts.icon;
+                width: 44px;
+                height: 44px;
+                transition: transform ease 0.3s;
+            }
+        }
+        .element-group__content {
+            // Special
+            display: none;
+        }
+        /// Expanded
+        &.expanded {
+            .element-group__description {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .icon {
+                    transform: rotate(180deg);
+                    transition: transform ease 0.3s;
+                }
+            }
+            .element-group__content {
+                // Special
+                display: block;
+            }
+        }
+    }
+}

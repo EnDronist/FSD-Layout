@@ -1,59 +1,70 @@
 @use "../../colors_.scss" as colors;
+@use "../../fonts_.scss" as fonts;
+@use "../fonts_.scss" as fonts-form;
+@use "index_.scss" as index;
 
 // Constants
 $min-width: 40px;
 $height: 20px;
 $padding: 1px;
 
-.like-button {
-    // Default
+&.like-button {
+    /// Default
+    // Special
     cursor: pointer;
-    display: flex;
+    // Size
     min-width: $min-width - $padding * 2;
     height: $height - $padding * 2;
+    // Display
+    display: flex;
     border-radius: 10px;
     padding: $padding;
+    // Color
     background: colors.$dark-25;
     .like-button__container {
         $container-min-width: $min-width - $padding * 2;
         $container-height: $height - $padding * 2;
-        display: inline-flex;
+        // Size
         min-width: $container-min-width;
         height: $container-height;
+        // Display
+        display: flex;
+        flex-direction: row;
         border-radius: 10px - $padding;
+        // Color
         background: #FFFFFF;
         .like-button__heart {
+            // Size
             width: $container-height; min-width: $container-height;
-            // Image
-            background-image: url("../common/form/icons/heart-empty.svg");
-            background-repeat: no-repeat;
-            background-position: center;
+            height: $container-height;
+            // Font
+            @include fonts.icon;
+            font-size: $container-height / 2;
+            // Color
+            color: colors.$dark-25;
         }
         .like-button__counter {
+            // Special
             user-select: none;
+            // Size
+            min-width: 10px + $padding * 2;
+            margin-right: $container-height / 3;
             // Display
             display: flex;
             justify-content: center;
             align-items: center;
-            min-width: 10px + $padding * 2;
-            margin-right: $container-height / 3;
             // Font
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 10px;
-            line-height: 12px;
+            @include fonts-form.like-button;
             // Color
             color: colors.$dark-25;
         }
     }
-    // Selected
+    /// Selected
     &.selected {
         background: colors.$purple-gradient;
         .like-button__container {
             .like-button__heart {
-                // Image
-                background-image: url("../common/form/icons/heart.svg");
+                @include fonts.gradiented(colors.$purple-gradient);
             }
             .like-button__counter {
                 color: colors.$purple;
@@ -61,6 +72,13 @@ $padding: 1px;
         }
     }
 }
-// Indent control for group
-.row > .like-button { margin-left: 10px; }
-.column > .like-button { margin-top: 10px; }
+
+/// Example
+/*
+<div class="form-element like-button [selected]">
+    <div class="like-button__container">
+        <div class="like-button__heart clickable">favorite_border</div>
+        <div class="like-button__counter">2</div>
+    </div>
+</div>
+*/

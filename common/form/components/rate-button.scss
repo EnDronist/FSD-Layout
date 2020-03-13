@@ -1,29 +1,27 @@
 @use "../../colors_.scss" as colors;
+@use "index_.scss" as index;
+@use "../../fonts_.scss" as fonts;
 
 // Constants
-$element-width: 24px;
-$element-height: 24px;
+$element-size: 24px;
 
-.rate-button {
+&.rate-button {
     // Horizontal
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     // Vertical
     &.vertical { display: flex; }
     .rate-button__element {
-        // Default
-        display: flex;
-        width: $element-width;
-        height: $element-height;
-        // Image
-        background-image: url("../common/form/icons/star-empty.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        // Selected
-        &.selected {
-            background-image: url("../common/form/icons/star.svg");
+        /// Default
+        // Icon
+        .icon {
+            width: $element-size;
+            height: $element-size;
+            font-size: $element-size;
+            @include fonts.icon;
+            @include fonts.gradiented(colors.$purple-gradient);
         }
+        /// Selected
+        /* &.selected */
     }
 }
-// Indent control for group
-.row > .rate-button { margin-left: 20px; }
-.column > .rate-button { margin-top: 20px; }
